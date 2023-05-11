@@ -1,14 +1,18 @@
-package wholesalemanagementsystem;
+
 import javax.swing.*;
+
+import utils.validator;
+
 import java.awt.*;
 import java.awt.event.*;
 public class LogIn {
 	
 	protected JFrame jframe;
 	protected JPanel jpanel;
-	protected JLabel jlabel,jlabel1,jlabel2,jlabelback;
+	protected JLabel jlabel,jlabel1,jlabel2;
 	protected JTextField jtextfield;
 	protected JPasswordField jpasswordfield;
+	private String username, password;
 	
 	public LogIn() {
 		
@@ -31,7 +35,7 @@ public class LogIn {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new SignUp1();
+				new UserType();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -53,9 +57,33 @@ public class LogIn {
 		jlabel2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new Menu();
-			}
+		            
+		            username = jtextfield.getText();
+		            password = jpasswordfield.getText();
+
+		            if (new validator().validate(username, password) == false){
+		                return;
+		            }else {
+		                database db = new database("users.txt");
+		                if (db.match("username=" + username + ",password=" + password)) {
+		                    jframe.dispose();
+		                    new Menu();//Menu(username)//
+		                    database loggedIn = new database("loggedIn.txt");
+		                    loggedIn.add(username);
+		                    JOptionPane.showMessageDialog(jframe, "Login successful");
+		                    
+		                    String type = db.getQueryResult(username, "accountType");
+		                    if (type.equals("Merchant")){
+		                        new merchantPage(username);
+		                    }else if (type.equals("Manufacturer")){
+		                        new manufacturerPage();
+		                    }
+		                } else {
+		                    JOptionPane.showMessageDialog(jframe, "Username or password is incorrect");
+		                }
+		            }
+		        }
+			
 			@Override
 			public void mouseEntered(MouseEvent e) {
 			}
@@ -89,31 +117,10 @@ public class LogIn {
 		jpasswordfield.setBounds(415, 331, 214, 29);
 		jpanel.add(jpasswordfield);
 		
-		jlabelback=new JLabel("");
-		jlabelback.setBounds(38,37,63,64);
-		jlabelback.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jpanel.add(jlabelback);
 
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\LogIn.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\LogIn.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

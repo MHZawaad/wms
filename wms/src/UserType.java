@@ -2,15 +2,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class SignUp2 {
+public class UserType {
 	
 	protected JFrame jframe;
 	protected JPanel jpanel;
-	protected JLabel jlabel,jlabel1,jlabelback;
-	protected JTextField jtextfield,jtextfield1,jtextfield2;
+	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,jlabelback;
+
 
 	
-	public SignUp2() {
+	public UserType() {
 		
 		
 		jframe=new JFrame();
@@ -24,33 +24,10 @@ public class SignUp2 {
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
         jframe.setVisible(true);
-		
-        jlabel1 = new JLabel("");
-		jlabel1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new SignUp3();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jlabel1.setBounds(435, 432, 131, 34);
-		jpanel.add(jlabel1);
-		
-		jlabelback=new JLabel("");
-		jlabelback.setBounds(37,38,67,64);
-		jlabelback.addMouseListener(new MouseAdapter() {
+        
+        
+		jlabel2 = new JLabel("");
+		jlabel2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
@@ -69,37 +46,62 @@ public class SignUp2 {
 			public void mouseReleased(MouseEvent e) {
 			}
 		});
-		jpanel.add(jlabelback);
+		jlabel2.setBounds(324, 285, 152, 30);
+		jpanel.add(jlabel2);
+		
+		jlabel3 = new JLabel("");
+		jlabel3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				//jframe.dispose();
+				//
 
-		jtextfield = new JTextField();
-		jtextfield.setFont(new Font("Tahoma", Font.BOLD, 11));
-		jtextfield.setCaretColor(new Color(30, 144, 255));
-		jtextfield.setBorder(null);
-		jtextfield.setOpaque(false);
-		jtextfield.setBounds(401, 267, 194, 20);
-		jpanel.add(jtextfield);
-		jtextfield.setColumns(10);
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+		});
+		jlabel3.setBounds(521, 285, 152, 30);
+		jpanel.add(jlabel3);
 		
-		jtextfield1 = new JTextField();
-		jtextfield1.setFont(new Font("Tahoma", Font.BOLD, 11));
-		jtextfield1.setOpaque(false);
-		jtextfield1.setBorder(null);
-		jtextfield1.setBounds(401, 324, 194, 20);
-		jpanel.add(jtextfield1);
-		jtextfield1.setColumns(10);
+		jlabelback=new JLabel("");
+		jlabelback.setIcon(new ImageIcon(""));
+		jlabelback.setBounds(36,37,70,67);
+		jlabelback.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				jframe.dispose();
+				new LogIn();
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+		});
+		jpanel.add(jlabelback);
 		
-		jtextfield2 = new JTextField();
-		jtextfield2.setFont(new Font("Tahoma", Font.BOLD, 11));
-		jtextfield2.setOpaque(false);
-		jtextfield2.setCaretColor(new Color(30, 144, 255));
-		jtextfield2.setBorder(null);
-		jtextfield2.setBounds(401, 381, 194, 20);
-		jpanel.add(jtextfield2);
-		jtextfield2.setColumns(10);
+
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\SignUp2.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\TypeChoose.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

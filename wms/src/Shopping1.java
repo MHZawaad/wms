@@ -1,7 +1,7 @@
-package wholesalemanagementsystem;
+
 import javax.swing.*;
 
-import wholesalemanagementsystem.Menu;
+
 
 import java.awt.*;
 import java.awt.event.*;
