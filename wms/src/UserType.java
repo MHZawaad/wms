@@ -53,8 +53,8 @@ public class UserType {
 		jlabel3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				//jframe.dispose();
-				//
+				jframe.dispose();
+				//new merchantPage();
 
 			}
 			@Override

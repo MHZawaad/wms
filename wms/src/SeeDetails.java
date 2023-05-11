@@ -24,22 +24,22 @@ public class SeeDetails {
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
         jframe.setVisible(true);
 
-        jlabel1 = new JLabel("image");
+        jlabel1 = new JLabel("");
     	//total amount
-		jlabel1.setBounds(145, 200, 178, 199);
+		jlabel1.setBounds(135, 154, 140, 160);
 		jpanel.add(jlabel1);
 		
-		jlabel2 = new JLabel("details");
+		jlabel2 = new JLabel("");
     	//total amount
-		jlabel2.setBounds(371, 203, 330, 181);
+		jlabel2.setBounds(285, 154, 330, 181);
 		jpanel.add(jlabel2);
         
 		jlabel3 = new JLabel("");
 		jlabel3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new PurchaseHistory();
+			
+				//new PurchaseHistory();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -54,14 +54,14 @@ public class SeeDetails {
 			public void mouseReleased(MouseEvent e) {
 			}
 		});
-		jlabel3.setBounds(342, 430, 150, 29);
+		jlabel3.setBounds(751, 530, 165, 34);
 		jpanel.add(jlabel3);
 		
 		
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\See Details.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\See Details.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

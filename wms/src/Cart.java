@@ -6,7 +6,7 @@ public class Cart {
 	
 	protected JFrame jframe;
 	protected JPanel jpanel;
-	protected JLabel jlabel,jlabel1,jlabel2,jlabelback,jlabelsignout;
+	protected JLabel jlabel,jlabel2,jlabelback,jlabelsignout;
 	protected JLabel product1,product2,product3,product4,product5;
 	protected JTextField jtextfield;
 
@@ -24,15 +24,6 @@ public class Cart {
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
         jframe.setVisible(true);
-		
-		
-    	jlabel1 = new JLabel("Total :");
-    	jlabel1.setForeground(Color.BLACK);
-    	jlabel1.setBackground(Color.WHITE);
-    	jlabel1.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\Cart.png"));
-    	//total amount
-		jlabel1.setBounds(110, 538, 269, 16);
-		jpanel.add(jlabel1);
         
 		jlabel2 = new JLabel("");
 		jlabel2.addMouseListener(new MouseAdapter() {
@@ -109,7 +100,7 @@ public class Cart {
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\Cart.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Cart.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

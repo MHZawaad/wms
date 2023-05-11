@@ -165,7 +165,7 @@ public class Menu {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\Menu.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Menu.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

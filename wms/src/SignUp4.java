@@ -54,7 +54,7 @@ public class SignUp4 {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\SignUp4.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp4.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

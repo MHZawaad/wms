@@ -6,7 +6,7 @@ public class PurchaseHistory {
 	
 	protected JFrame jframe;
 	protected JPanel jpanel;
-	protected JLabel jlabel,jlabelback,jlabelsignout;
+	protected JLabel jlabel,jlabelsignout;
 	protected JLabel product1,product2,product3,product4,product5;
 	protected JTextField jtextfield;
 
@@ -24,34 +24,10 @@ public class PurchaseHistory {
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
         jframe.setVisible(true);
-
-		jlabelback=new JLabel("Back");
-		jlabelback.setIcon(new ImageIcon(""));
-		jlabelback.setBounds(40,70,70,70);
-		jlabelback.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new Menu();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jpanel.add(jlabelback);
 		
-		jlabelsignout=new JLabel("SignOut");
+		jlabelsignout=new JLabel("");
 		jlabelsignout.setIcon(new ImageIcon(""));
-		jlabelsignout.setBounds(869,70,70,70);
+		jlabelsignout.setBounds(801,50,189,44);
 		jlabelsignout.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -77,7 +53,7 @@ public class PurchaseHistory {
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\PurchaseHistory.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\PurchaseHistory.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

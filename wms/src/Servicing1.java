@@ -55,7 +55,7 @@ public class Servicing1{
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\WholeSaleManagementSystem\\wholesalemanagementsystem\\Resources\\Servicing1.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Servicing1.png"));
 		jpanel.add(jlabel);
 				
 		
