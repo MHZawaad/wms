@@ -9,6 +9,7 @@ public class PurchaseHistory {
 	protected JLabel jlabel,jlabelsignout;
 	protected JLabel product1,product2,product3,product4,product5;
 	protected JTextField jtextfield;
+	private JTable table;
 
 
 	public PurchaseHistory() {
@@ -47,6 +48,10 @@ public class PurchaseHistory {
 			public void mouseReleased(MouseEvent e) {
 			}
 		});
+		
+		table = new JTable();
+		table.setBounds(215, 158, 578, 224);
+		jpanel.add(table);
 		jpanel.add(jlabelsignout);
 		
 		

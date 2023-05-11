@@ -35,7 +35,7 @@ public class LogIn {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new UserType();
+				new signUpPage();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -66,15 +66,14 @@ public class LogIn {
 		            }else {
 		                database db = new database("users.txt");
 		                if (db.match("username=" + username + ",password=" + password)) {
-		                    jframe.dispose();
-		                    new Menu();//Menu(username)//
 		                    database loggedIn = new database("loggedIn.txt");
 		                    loggedIn.add(username);
 		                    JOptionPane.showMessageDialog(jframe, "Login successful");
+		                    jframe.dispose();
 		                    
 		                    String type = db.getQueryResult(username, "accountType");
 		                    if (type.equals("Merchant")){
-		                        new merchantPage(username);
+		                    	new Menu();//Menu(username)//
 		                    }else if (type.equals("Manufacturer")){
 		                        new manufacturerPage();
 		                    }

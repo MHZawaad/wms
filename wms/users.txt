@@ -1,0 +1,12 @@
+username=fsafasf,password=asfasfsfsafsfa1,accountType=Merchant,fullName=safas,ownerAddress=fasfasf,ownerPhone=asfasf,entityName=asfas,entityAddress=asfas,entityPhone=safa
+
+username=ssssssssssss,password=ssssssssssss1,accountType=Merchant,fullName=fasf,ownerAddress=asss,ownerPhone=sssssssssssssssss,entityName=sssssssssss,entityAddress=ssssssssssss,entityPhone=ssssssssssssss
+username=dsafadsf,password=sadfasdf2,accountType=Merchant,fullName=dfadsafdsaf,ownerAddress=dsafdsafsad,ownerPhone=dsafasdfasdf,entityName=dsafadsf,entityAddress=dsafdsafsa,entityPhone=dfasdfasdf
+username=dsafasdf,password=dsafasdf2,accountType=Merchant,fullName=dsafadsf,ownerAddress=dsafadsf,ownerPhone=dsafadsf,entityName=dasfad,entityAddress=dsafadf,entityPhone=dsafasdf
+username=adfasdf,password=adsfasdf12,accountType=Merchant,fullName=fsfdsa,ownerAddress=fadsfads,ownerPhone=fsadfasd,entityName=fdsfasd,entityAddress=fsdfadsf,entityPhone=dsfasdf
+username=dafadsf,password=dsafdsaf2,accountType=Merchant,fullName=dafadsfadsf,ownerAddress=dfdsaf,ownerPhone=dsafasdf,entityName=adfads,entityAddress=fsadfadsf,entityPhone=dsfdsaf
+username=dasfsadf,password=dasfsadf3434,accountType=Merchant,fullName=dafasdf,ownerAddress=sdafasdf,ownerPhone=dafadsf,entityName=dfasdfsad,entityAddress=fdsfasdf,entityPhone=dsafsadf
+username=mahdi,password=mahdi1234,accountType=Merchant,fullName=skfnsndfds,ownerAddress=dsafsadfdsf,ownerPhone=sdfdsafsadfasd,entityName=dafdsafsad,entityAddress=dsafsadf,entityPhone=dsfsdafsad
+username=asfasf,password=asfasfas1,accountType=Merchant,fullName=sfaasfsaf,ownerAddress=asfasf,ownerPhone=asfasf,entityName=asfasfasf,entityAddress=safasfas,entityPhone=asfasfafs
+username=asfasfasffdgsdg,password=asfasfas2,accountType=Merchant,fullName=sfasf,ownerAddress=asfasfas,ownerPhone=asfasf,entityName=asfasf,entityAddress=asfasf,entityPhone=asfasfa
+

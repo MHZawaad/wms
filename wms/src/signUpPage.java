@@ -4,6 +4,7 @@ import java.util.*;
 import java.util.regex.Pattern;
 import java.io.*;
 import javax.swing.*;
+import java.awt.event.*;
 
 import utils.validator;
 
@@ -12,14 +13,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-public class signUpPage implements ActionListener {
+public class signUpPage implements MouseListener {
 	
 	protected JFrame jframe;
-	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,jlabel4,jlabel5,jlabel6,jlabel7,jlabel8,jlabel9,jlabel10,jlabel11,jlabel12,jlabel13,jlabel14,jlabelback,jlabelback1,jlabelback2,jlabwlback3;
+	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,nextButton,jlabel7,jlabel8,jlabel9,jlabel10,jlabel11,jlabel12,jlabel13,jlabel14,jlabelback,jlabelback1,jlabelback2,jlabwlback3;
 	private JTextField jtextfield,jtextfield1,jtextfield2,jtextfield3,jtextfield4,jtextfield5,jtextfield6,jtextfield7,jtextfield8,jtextfield9;
-    private JPanel jpanel,jpanel1, jpanel2, jpanel3, jpanel4,jpanel5;
-    private String username, password, fullName, ownerAddress, ownerPhone, ownerEmail, accountType, entityName,
+    private JPanel jpanel1, jpanel2, jpanel3, jpanel4,jpanel5;
+    private String username, password,confirmpassword, fullName, ownerAddress, ownerPhone, ownerEmail, accountType, entityName,
             entityAddress, entityPhone, entityEmail, entityLicense;
     private int step = 1;
 
@@ -29,16 +31,12 @@ public class signUpPage implements ActionListener {
 		jframe.setSize(new Dimension(1016,638));
 		jframe.setLocationRelativeTo(null);
 		jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		jframe.getContentPane().add(jpanel);
+		jframe.getContentPane();
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
+		jframe.setLocationRelativeTo(null);
         jframe.setVisible(true);
         
-        
-
-		jframe.setLocationRelativeTo(null);
-		jframe.setVisible(true);
-
         showStep1();
     }
 
@@ -52,89 +50,34 @@ public class signUpPage implements ActionListener {
     private void showStep1() {
 
         step = 1;
+        jpanel1 = new JPanel();
+        jpanel1.setLayout(null);
+        jpanel1.setSize(1000, 600);
 
-        jpanel = new JPanel();
-        jpanel.setLayout(null);
-        jpanel.setSize(1000, 600);
-
-		jlabel2 = new JLabel("");
-		jlabel2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new signUpPage();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
+		jlabel2 = new JLabel("");//merchant
+		jlabel2.addMouseListener(this);
 		jlabel2.setBounds(324, 285, 152, 30);
-		jpanel.add(jlabel2);
+		jpanel1.add(jlabel2);
 		
-		jlabel3 = new JLabel("");
-		jlabel3.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				//new merchantPage();
-
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
+		jlabel3 = new JLabel("");//manufacturer
+		jlabel3.addMouseListener(this);
 		jlabel3.setBounds(521, 285, 152, 30);
-		jpanel.add(jlabel3);
+		jpanel1.add(jlabel3);
 		
 		jlabelback=new JLabel("");
+		jlabelback.addMouseListener(this);
 		jlabelback.setIcon(new ImageIcon(""));
 		jlabelback.setBounds(36,37,70,67);
-		jlabelback.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new LogIn();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jpanel.add(jlabelback);
+		jpanel1.add(jlabelback);
 		
 
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
 		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\TypeChoose.png"));
-		jpanel.add(jlabel);
+		jpanel1.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
+		jframe.setLocationRelativeTo(null);
        
         
         if (jpanel2 != null) {
@@ -144,14 +87,14 @@ public class signUpPage implements ActionListener {
         }
 
 
-        jframe.add(jpanel1);
+        jframe.getContentPane().add(jpanel1);
     }
 
     /**
      * Step 2. Second panel on the same frame
      * Takes the Name, Address, Phone, and Email from the user
      */
-    private void showStep2() {
+    private void showStep2() {//signup1
 
         step = 2;
 
@@ -159,51 +102,15 @@ public class signUpPage implements ActionListener {
         jpanel2.setLayout(null);
         jpanel2.setSize(1000, 600);
 
-		jlabel4 = new JLabel("");
-		jlabel4.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new SignUp2();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jlabel4.setBounds(435, 432, 131, 34);
-		jpanel.add(jlabel4);
+		nextButton = new JLabel("");//next
+		nextButton.addMouseListener(this);
+		nextButton.setBounds(435, 432, 131, 34);
+		jpanel2.add(nextButton);
 		
-		jlabelback=new JLabel("");
+		jlabelback=new JLabel("");//back
+		jlabelback.addMouseListener(this);
 		jlabelback.setBounds(37,38,67,64);
-		jlabelback.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new LogIn();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jpanel.add(jlabelback);
+		jpanel2.add(jlabelback);
 
 		jtextfield = new JTextField();
 		jtextfield.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -211,7 +118,7 @@ public class signUpPage implements ActionListener {
 		jtextfield.setBorder(null);
 		jtextfield.setOpaque(false);
 		jtextfield.setBounds(401, 267, 194, 20);
-		jpanel.add(jtextfield);
+		jpanel2.add(jtextfield);
 		jtextfield.setColumns(10);
 		
 		jtextfield1 = new JTextField();
@@ -219,7 +126,7 @@ public class signUpPage implements ActionListener {
 		jtextfield1.setOpaque(false);
 		jtextfield1.setBorder(null);
 		jtextfield1.setBounds(401, 324, 194, 20);
-		jpanel.add(jtextfield1);
+		jpanel2.add(jtextfield1);
 		jtextfield1.setColumns(10);
 		
 		jtextfield2 = new JTextField();
@@ -228,30 +135,31 @@ public class signUpPage implements ActionListener {
 		jtextfield2.setCaretColor(new Color(30, 144, 255));
 		jtextfield2.setBorder(null);
 		jtextfield2.setBounds(401, 381, 194, 20);
-		jpanel.add(jtextfield2);
+		jpanel2.add(jtextfield2);
 		jtextfield2.setColumns(10);
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
 		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp1.png"));
-		jpanel.add(jlabel);
+		jpanel2.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
+		jframe.setLocationRelativeTo(null);
 
 
 
-        if (panel1 != null) {
-            panel1.setVisible(false);
-            this.remove(panel1);
+        if (jpanel1 != null) {
+            jpanel1.setVisible(false);
+            jframe.remove(jpanel1);
             System.out.println("removed panel1");
         }
 
-        if (panel3 != null) {
-            panel3.setVisible(false);
-            this.remove(panel3);
+        if (jpanel3 != null) {
+            jpanel3.setVisible(false);
+            jframe.remove(jpanel3);
             System.out.println("removed panel3");
         }
 
-        this.add(panel2);
+        jframe.getContentPane().add(jpanel2);
     }
 
     /**
@@ -262,101 +170,84 @@ public class signUpPage implements ActionListener {
 
         step = 3;
 
-        panel3 = new JPanel();
-        panel3.setLayout(null);
-        panel3.setSize(800, 450);
+        jpanel3 = new JPanel();
+        jpanel3.setLayout(null);
+        jpanel3.setSize(1000, 600);
 
-        stepCount.setBounds(10, 10, 80, 25);
-        panel3.add(stepCount);
+        nextButton = new JLabel("");//next
+        nextButton.addMouseListener(this);
+		nextButton.setBounds(435, 432, 131, 34);
+		jpanel3.add(nextButton);
+		
+		jlabelback=new JLabel("");//back
+		jlabelback.addMouseListener(this);
+		jlabelback.setBounds(37,38,67,64);
+		jpanel3.add(jlabelback);
 
-        entityNameLabel.setBounds(260, 50, 80, 25);
-        panel3.add(entityNameLabel);
-
-        entityNameField.setBounds(350, 50, 160, 25);
-        panel3.add(entityNameField);
-        entityAddressLabel.setBounds(260, 100, 80, 25);
-        panel3.add(entityAddressLabel);
-        entityAddressField.setBounds(350, 100, 160, 25);
-        panel3.add(entityAddressField);
-        entityPhoneLabel.setBounds(260, 150, 80, 25);
-        panel3.add(entityPhoneLabel);
-        entityPhoneField.setBounds(350, 150, 160, 25);
-        panel3.add(entityPhoneField);
-        entityEmailLabel.setBounds(260, 200, 80, 25);
-        panel3.add(entityEmailLabel);
-        entityEmailField.setBounds(350, 200, 160, 25);
-        panel3.add(entityEmailField);
-        entityLicenseLabel.setBounds(260, 250, 80, 25);
-        panel3.add(entityLicenseLabel);
-        entityLicenseField.setBounds(350, 250, 160, 25);
-        panel3.add(entityLicenseField);
-        previousButton.setBounds(260, 300, 100, 25);
-        panel3.add(previousButton);
-        nexButton.setBounds(400, 300, 100, 25);
-        panel3.add(nexButton);
+		jtextfield3 = new JTextField();
+		jtextfield3.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield3.setCaretColor(new Color(30, 144, 255));
+		jtextfield3.setBorder(null);
+		jtextfield3.setOpaque(false);
+		jtextfield3.setBounds(401, 267, 194, 20);
+		jpanel3.add(jtextfield3);
+		jtextfield3.setColumns(10);
+		
+		jtextfield4 = new JTextField();
+		jtextfield4.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield4.setOpaque(false);
+		jtextfield4.setBorder(null);
+		jtextfield4.setBounds(401, 324, 194, 20);
+		jpanel3.add(jtextfield4);
+		jtextfield4.setColumns(10);
+		
+		jtextfield5 = new JTextField();
+		jtextfield5.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield5.setOpaque(false);
+		jtextfield5.setCaretColor(new Color(30, 144, 255));
+		jtextfield5.setBorder(null);
+		jtextfield5.setBounds(401, 381, 194, 20);
+		jpanel3.add(jtextfield5);
+		jtextfield5.setColumns(10);
+		
+		jlabel=new JLabel();
+		jlabel.setSize(1000, 600);
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp2.png"));
+		jpanel3.add(jlabel);
+		jframe.setBounds(0,0,1016,637);
+		jframe.setLocationRelativeTo(null);
         if (accountType.equals("Manufacturer")) {
 
-            stepCount.setText("Step 3/4");
-
-            entityNameLabel.setText("Company Name");
-
-            entityAddressLabel.setText("Company Address");
-
-            entityPhoneLabel.setText("Company Phone");
-
-            entityEmailLabel.setText("Company Email");
-
-            entityLicenseLabel.setText("Company License");
-
-            previousButton.setText("Previous");
-
-            nexButton.setText("Next");
-        
-            if (panel2 != null) {
-                panel2.setVisible(false);
-                this.remove(panel2);
+            if (jpanel2 != null) {
+                jpanel2.setVisible(false);
+                jframe.remove(jpanel2);
                 System.out.println("removed panel2");
             }
     
-            if (panel4 != null) {
-                panel4.setVisible(false);
-                this.remove(panel4);
+            if (jpanel4 != null) {
+                jpanel4.setVisible(false);
+                jframe.remove(jpanel4);
                 System.out.println("removed panel4");
             }
     
-            this.add(panel3);
+            jframe.add(jpanel3);
             
         } else if (accountType.equals("Merchant")) {
 
-            stepCount.setText("Step 3/4");
-
-            entityNameLabel.setText("Shop Name");
-
-            entityAddressLabel.setText("Shop Address");
-
-            entityPhoneLabel.setText("Shop Phone");
-
-            entityEmailLabel.setText("Shop Email");
-
-            entityLicenseLabel.setText("Shop License");
-
-            previousButton.setText("Previous");
-
-            nexButton.setText("Next");
-
-            if (panel2 != null) {
-                panel2.setVisible(false);
-                this.remove(panel2);
+       
+            if (jpanel2 != null) {
+                jpanel2.setVisible(false);
+                jframe.remove(jpanel2);
                 System.out.println("removed panel2");
             }
     
-            if (panel4 != null) {
-                panel4.setVisible(false);
-                this.remove(panel4);
+            if (jpanel4 != null) {
+                jpanel4.setVisible(false);
+                jframe.remove(jpanel4);
                 System.out.println("removed panel4");
             }
     
-            this.add(panel3);
+            jframe.add(jpanel3);
 
         } else {
             System.out.println("Error: Account type not found");
@@ -371,97 +262,147 @@ public class signUpPage implements ActionListener {
         
         step = 4;
 
-        panel4 = new JPanel();
-        panel4.setLayout(null);
-        panel4.setSize(800, 450);
+        jpanel4 = new JPanel();
+        jpanel4.setLayout(null);
+        jpanel4.setSize(1000, 600);
 
-        stepCount.setText("Step 4/4");
-        stepCount.setBounds(10, 10, 80, 25);
-        panel4.add(stepCount);
+        nextButton = new JLabel("");//next
+        nextButton.addMouseListener(this);
+		nextButton.setBounds(435, 432, 131, 34);
+		jpanel4.add(nextButton);
+		
+		jlabelback=new JLabel("");//back
+		jlabelback.addMouseListener(this);
+		jlabelback.setBounds(37,38,67,64);
+		jpanel4.add(jlabelback);
 
-        usernameLabel.setText("Username");
-        usernameLabel.setBounds(260, 150, 80, 25);
-        panel4.add(usernameLabel);
-
-        usernameField = new JTextField(20);
-        usernameField.setBounds(350, 150, 160, 25);
-        panel4.add(usernameField);
-
-        passwordLabel.setText("Password");
-        passwordLabel.setBounds(260, 200, 80, 25);
-        panel4.add(passwordLabel);
-
-        passwordField = new JPasswordField(20);
-        passwordField.setBounds(350, 200, 160, 25);
-        panel4.add(passwordField);
-
-        previousButton.setText("Previous");
-        previousButton.setBounds(120, 250, 100, 25);
-        panel4.add(previousButton);
-
-        nexButton.setText("Finish");
-        nexButton.setBounds(260, 250, 100, 25);
-        panel4.add(nexButton);
-
-        cancelButton.setText("Cancel");
-        cancelButton.setBounds(400, 250, 100, 25);
-        panel4.add(cancelButton);
-
-        if (panel3 != null) {
-            panel3.setVisible(false);
-            this.remove(panel3);
+		jtextfield6 = new JTextField();
+		jtextfield6.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield6.setCaretColor(new Color(30, 144, 255));
+		jtextfield6.setBorder(null);
+		jtextfield6.setOpaque(false);
+		jtextfield6.setBounds(401, 267, 194, 20);
+		jpanel4.add(jtextfield6);
+		jtextfield6.setColumns(10);
+		
+		jtextfield7 = new JTextField();
+		jtextfield7.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield7.setOpaque(false);
+		jtextfield7.setBorder(null);
+		jtextfield7.setBounds(401, 324, 194, 20);
+		jpanel4.add(jtextfield7);
+		jtextfield7.setColumns(10);
+		
+		jtextfield8 = new JTextField();
+		jtextfield8.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield8.setOpaque(false);
+		jtextfield8.setCaretColor(new Color(30, 144, 255));
+		jtextfield8.setBorder(null);
+		jtextfield8.setBounds(401, 381, 194, 20);
+		jpanel4.add(jtextfield8);
+		jtextfield8.setColumns(10);
+		
+		jlabel=new JLabel();
+		jlabel.setSize(1000, 600);
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp3.png"));
+		jpanel4.add(jlabel);
+		jframe.setBounds(0,0,1016,637);
+		jframe.setLocationRelativeTo(null);
+		System.out.println("figures");
+        if (jpanel3 != null) {
+            jpanel3.setVisible(false);
+            jframe.remove(jpanel3);
             System.out.println("removed panel3");
         }
+        
+        if (jpanel4 != null) {
+            jpanel3.setVisible(false);
+            jframe.remove(jpanel3);
+            System.out.println("removed panel3");
+        	}
 
-        this.add(panel4);
+        jframe.add(jpanel4);
     }
+    
+    public void showStep5() {
+    	step = 5;
+        jpanel5 = new JPanel();
+        jpanel5.setLayout(null);
+        jpanel5.setSize(1000, 600);
+    	
+    	nextButton = new JLabel("");//go to login
+    	nextButton.addMouseListener(this);
+		nextButton.setBounds(424, 285, 152, 30);
+		jpanel5.add(nextButton);
+		
+		jlabel=new JLabel();
+		jlabel.setSize(1000, 600);
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp4.png"));
+		jpanel5.add(jlabel);
+		jframe.setBounds(0,0,1016,637);
+		jframe.setLocationRelativeTo(null);
+		
+		jpanel1.setVisible(false);
+		jpanel2.setVisible(false);
+		jpanel3.setVisible(false);
+		jpanel4.setVisible(false);
 
-    public void actionPerformed(ActionEvent e) {
-        System.out.println("Clicked on " + e.getActionCommand() + " button");
-        if (e.getSource() == nexButton) {
+    	jframe.add(jpanel5);
+		
+	}
+    @Override
+    public void mouseClicked(MouseEvent e) {
+    	
+        System.out.println("Clicked on " + /*e.getActionCommand() +*/ " button");
+        if (e.getSource() == nextButton) {
+        
             if (step == 2) {
-                fullName = nameField.getText();
-                ownerAddress = addressField.getText();
-                ownerPhone = phoneField.getText();
-                ownerEmail = emailField.getText();
+            	
+                fullName = jtextfield.getText();
+                ownerAddress = jtextfield1.getText();
+                ownerPhone = jtextfield2.getText();
+                //ownerEmail = emailField.getText();
 
-                if (fullName.equals("") || ownerAddress.equals("") || ownerPhone.equals("") || ownerEmail.equals("")) {
-                    JOptionPane.showMessageDialog(this, "Please fill all the fields");
+                if (fullName.equals("") || ownerAddress.equals("") || ownerPhone.equals("") ) {
+                    JOptionPane.showMessageDialog(jframe, "Please fill all the fields");
                     return;
                 }
 
                 // email validation
-                if (!ownerEmail.contains("@") || !ownerEmail.contains(".")) {
-                    JOptionPane.showMessageDialog(this, "Please enter a valid email address");
-                    return;
-                }
+                //if (!ownerEmail.contains("@") || !ownerEmail.contains(".")) {
+                 //   JOptionPane.showMessageDialog(jframe, "Please enter a valid email address");
+                //    return;
+                //}
 
                 showStep3();
             } else if (step == 3) {
-                entityName = entityNameField.getText();
-                entityAddress = entityAddressField.getText();
-                entityPhone = entityPhoneField.getText();
-                entityEmail = entityEmailField.getText();
-                entityLicense = entityLicenseField.getText();
+            	
+                entityName = jtextfield3.getText();
+                entityAddress = jtextfield4.getText();
+                entityPhone = jtextfield5.getText();
+                //entityEmail = entityEmailField.getText();
+                //entityLicense = jtextfield5.getText();
 
                 if (entityName.equals("") || entityAddress.equals("") || entityPhone.equals("")
-                        || entityEmail.equals("") || entityLicense.equals("")) {
-                    JOptionPane.showMessageDialog(this, "Please fill all the fields");
+                       /* || entityEmail.equals("") || entityLicense.equals("")*/) {
+                    JOptionPane.showMessageDialog(jframe, "Please fill all the fields");
                     return;
                 }
 
                 // email validation
-                if (!entityEmail.contains("@") || !entityEmail.contains(".")) {
-                    JOptionPane.showMessageDialog(this, "Please enter a valid email address");
-                    return;
-                }
+                //if (!entityEmail.contains("@") || !entityEmail.contains(".")) {
+                //    JOptionPane.showMessageDialog(jframe, "Please enter a valid email address");
+                //    return;
+                //}
 
                 showStep4();
             } else if (step == 4) {
+            	
                 System.out.println("Last step");
 
-                username = usernameField.getText();
-                password = passwordField.getText();
+                username = jtextfield6.getText();
+                password = jtextfield7.getText();
+                confirmpassword=jtextfield8.getText();
 
 
                 if (new validator().validate(username, password) == false){
@@ -474,42 +415,82 @@ public class signUpPage implements ActionListener {
 
                 // find if username already exists
                 if (db.match("username=" + username)) {
-                    JOptionPane.showMessageDialog(this, "Username already exists");
+             
+                    JOptionPane.showMessageDialog(jframe, "Username already exists");
                     return;
                 }
 
                 String record = "username=" + username + ",password=" + password + ",accountType=" + accountType
                         + ",fullName=" + fullName + ",ownerAddress=" + ownerAddress + ",ownerPhone=" + ownerPhone
-                        + ",ownerEmail=" + ownerEmail + ",entityName=" + entityName + ",entityAddress=" + entityAddress
-                        + ",entityPhone=" + entityPhone + ",entityEmail=" + entityEmail + ",entityLicense="
-                        + entityLicense + "\n";
+                        + /*",ownerEmail=" + ownerEmail +*/ ",entityName=" + entityName + ",entityAddress=" + entityAddress
+                        + ",entityPhone=" + entityPhone + /*",entityEmail=" + entityEmail + ",entityLicense="
+                        + entityLicense + */"\n";
 
                 db.add(record);
 
-                JOptionPane.showMessageDialog(this, "Account created successfully");
-                this.dispose();
-                new loginPage();
+                //JOptionPane.showMessageDialog(jframe, "Account created successfully");
+                showStep5();
+            } else if(step ==5){
+            	jframe.dispose();
+            	new LogIn();
             }
 
-        }else if (e.getSource() == previousButton){
+        }else if (e.getSource() == jlabelback){
+        	
             if (step == 2){
                 showStep1();
+            }else if (step == 1){
+            	jframe.dispose();
+                new LogIn();
             }else if (step == 3){
                 showStep2();
             }else if (step == 4){
                 showStep3();
             }
-        } else if (e.getSource() == merchantButton) {
+        } else if (e.getSource() == jlabel2) {
+        
             accountType = "Merchant";
-            panel1.setVisible(false);
+            jpanel1.setVisible(false);
             showStep2();
-        } else if (e.getSource() == manufacturerButton) {
+        } else if (e.getSource() == jlabel3) {//
+        
             accountType = "Manufacturer";
-            panel1.setVisible(false);
-            showStep2();
-        } else if (e.getSource() == cancelButton) {
-            this.setVisible(false);
-            new signUpPage();
+            //jpanel1.setVisible(false);
+            //showStep2();
+        
         }
     }
+
+
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+
+		
+	}
+
+
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
 }
