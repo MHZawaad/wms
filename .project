@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>wms</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Resources</name>
+			<type>2</type>
+			<location>E:/Git/wms/Resources</location>
+		</link>
+	</linkedResources>
+</projectDescription>
