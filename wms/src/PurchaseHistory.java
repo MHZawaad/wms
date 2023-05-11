@@ -2,6 +2,8 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.border.EtchedBorder;
+import javax.swing.table.DefaultTableModel;
 public class PurchaseHistory {
 	
 	protected JFrame jframe;
@@ -10,6 +12,7 @@ public class PurchaseHistory {
 	protected JLabel product1,product2,product3,product4,product5;
 	protected JTextField jtextfield;
 	private JTable table;
+	private JLabel GoToMenu;
 
 
 	public PurchaseHistory() {
@@ -50,8 +53,66 @@ public class PurchaseHistory {
 		});
 		
 		table = new JTable();
-		table.setBounds(215, 158, 578, 224);
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"New column", "New column", "New column", "New column", "New column"
+			}
+		) {
+			Class[] columnTypes = new Class[] {
+				String.class, String.class, String.class, Object.class, Object.class
+			};
+			public Class getColumnClass(int columnIndex) {
+				return columnTypes[columnIndex];
+			}
+		});
+		table.setRowMargin(4);
+		table.setSurrendersFocusOnKeystroke(true);
+		table.setInheritsPopupMenu(true);
+		table.setIgnoreRepaint(true);
+		table.setEditingRow(5);
+		table.setEditingColumn(4);
+		table.setColumnSelectionAllowed(true);
+		table.setCellSelectionEnabled(true);
+		table.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		table.setAutoCreateRowSorter(true);
+		table.setIntercellSpacing(new Dimension(2, 2));
+		table.setBounds(80, 120, 840, 400);
 		jpanel.add(table);
+		
+		GoToMenu = new JLabel("");
+		GoToMenu.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				jframe.dispose();
+				new Menu();
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+		});
+		GoToMenu.setBounds(756, 535, 150, 30);
+		jpanel.add(GoToMenu);
 		jpanel.add(jlabelsignout);
 		
 		
