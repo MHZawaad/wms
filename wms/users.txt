@@ -9,4 +9,5 @@ username=dasfsadf,password=dasfsadf3434,accountType=Merchant,fullName=dafasdf,ow
 username=mahdi,password=mahdi1234,accountType=Merchant,fullName=skfnsndfds,ownerAddress=dsafsadfdsf,ownerPhone=sdfdsafsadfasd,entityName=dafdsafsad,entityAddress=dsafsadf,entityPhone=dsfsdafsad
 username=asfasf,password=asfasfas1,accountType=Merchant,fullName=sfaasfsaf,ownerAddress=asfasf,ownerPhone=asfasf,entityName=asfasfasf,entityAddress=safasfas,entityPhone=asfasfafs
 username=asfasfasffdgsdg,password=asfasfas2,accountType=Merchant,fullName=sfasf,ownerAddress=asfasfas,ownerPhone=asfasf,entityName=asfasf,entityAddress=asfasf,entityPhone=asfasfa
+username=dsafasdffsdf,password=asdfasdf33,accountType=Merchant,fullName=zfasfas,ownerAddress=fsafadsf,ownerPhone=adfsadf,entityName=afdsfa,entityAddress=dfadfasdf,entityPhone=sdafasdf
 
