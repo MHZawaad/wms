@@ -31,7 +31,7 @@ public class UserType {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new SignUp1();
+				new signUpPage();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
