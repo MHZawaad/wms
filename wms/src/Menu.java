@@ -145,6 +145,8 @@ public class Menu {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override

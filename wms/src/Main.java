@@ -17,7 +17,7 @@ public class Main{
             if (!ret.equals("")){
                 String type = db.getQueryResult(value, "accountType");
                 if (type.equals("Merchant")){
-                    new merchantPage(value);
+                    new Menu();
                 }else if (type.equals("Manufacturer")){
                     new manufacturerPage();
                 }
