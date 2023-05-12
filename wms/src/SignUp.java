@@ -1,4 +1,3 @@
-//fuad
 import java.lang.*;
 import java.util.*;
 import java.util.regex.Pattern;
@@ -15,7 +14,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class signUpPage implements MouseListener {
+public class SignUp implements MouseListener {
 	
 	protected JFrame jframe;
 	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,nextButton,jlabel7,jlabel8,jlabel9,jlabel10,jlabel11,jlabel12,jlabel13,jlabel14,jlabelback,jlabelback1,jlabelback2,jlabwlback3;
@@ -25,7 +24,7 @@ public class signUpPage implements MouseListener {
             entityAddress, entityPhone, entityEmail, entityLicense;
     private int step = 1;
 
-    signUpPage() {
+    SignUp() {
     	jframe=new JFrame();
 		jframe.setTitle("SignUp");
 		jframe.setSize(new Dimension(1016,638));

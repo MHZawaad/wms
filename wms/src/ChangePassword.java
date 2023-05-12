@@ -1,10 +1,6 @@
-
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
-
-
-
 public class ChangePassword{
 	private JFrame jframe;
 	private JPanel jpanel;
@@ -46,12 +42,12 @@ public class ChangePassword{
 	    
 	    
 
-		jlabel1 = new JLabel("");
+		jlabel1 = new JLabel("");//sets password
 		jlabel1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new PurchaseHistory();
+				new ChangePassword1();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -100,6 +96,8 @@ public class ChangePassword{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override

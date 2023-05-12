@@ -1,11 +1,6 @@
-
-
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
-
-
-
 public class ChangePassword1{
 	private JFrame jframe;
 	private JPanel jpanel;
@@ -31,7 +26,7 @@ public class ChangePassword1{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new LogIn();
+				new Menu();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {

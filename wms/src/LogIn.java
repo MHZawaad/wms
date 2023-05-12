@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 
 import utils.validator;
@@ -35,7 +34,7 @@ public class LogIn {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new signUpPage();
+				new SignUp();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -75,7 +74,7 @@ public class LogIn {
 		                    if (type.equals("Merchant")){
 		                    	new Menu();//Menu(username)//
 		                    }else if (type.equals("Manufacturer")){
-		                        new manufacturerPage();
+		                        //new manufacturerPage();
 		                    }
 		                } else {
 		                    JOptionPane.showMessageDialog(jframe, "Username or password is incorrect");

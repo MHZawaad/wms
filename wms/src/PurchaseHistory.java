@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -36,6 +35,8 @@ public class PurchaseHistory {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override
@@ -53,9 +54,10 @@ public class PurchaseHistory {
 		});
 		
 		table = new JTable();
+		table.setOpaque(false);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null},
+				{"Product Name", "Price", "Quantity", "ID", "Date"},
 				{null, null, null, null, null},
 				{null, null, null, null, null},
 				{null, null, null, null, null},
@@ -85,7 +87,7 @@ public class PurchaseHistory {
 		table.setEditingColumn(4);
 		table.setColumnSelectionAllowed(true);
 		table.setCellSelectionEnabled(true);
-		table.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		table.setBorder(null);
 		table.setAutoCreateRowSorter(true);
 		table.setIntercellSpacing(new Dimension(2, 2));
 		table.setBounds(80, 120, 840, 400);

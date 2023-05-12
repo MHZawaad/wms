@@ -1,6 +1,5 @@
 import java.io.*;
 import java.util.*;
-
 public class database {
     private String filename;
     private ArrayList<String> data;

@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -31,7 +30,7 @@ public class UserType {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new signUpPage();
+				new SignUp();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
