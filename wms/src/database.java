@@ -18,7 +18,6 @@ public class database {
                 file.createNewFile();
             }
 
-
             BufferedReader br = new BufferedReader(new FileReader(this.filename));
             String line = br.readLine();
             while (line != null) {
@@ -88,9 +87,9 @@ public class database {
         read();
         return this.data;
     }
-    
+
     public String get() {
-    	return getData().get(0);
+        return getData().get(0);
     }
 
     public boolean contains(String line) {
@@ -181,8 +180,61 @@ public class database {
         return "";
     }
 
+     /**
+     * 
+     * @param PrimaryKey The cell's unique identifier or the 1st Key on which line the operation will be performed on
+     * @param QueryKey The query key which's value will be updated
+     * @param QueryValue The new value
+     */
+    public void update(String PrimaryKey, String QueryKey, String QueryValue){
+        read();
+ 
+        String[] lines = new String[this.data.size()];
+        this.data.toArray(lines);
+ 
+        System.out.println("Updating " + QueryKey + " with " + QueryValue + " for " + PrimaryKey);
+ 
+        //get which line the user is on
+        int lineNum = -1;
+        for (int i = 0; i < lines.length; i++){
+            if (lines[i].equals("")){
+                continue;
+            }
+            String[] lineParts = lines[i].split(",");
+            if (lineParts[0].split("=")[1].equals(PrimaryKey)){
+                lineNum = i;
+            }
+        }
+ 
+        if (lineNum == -1){
+            return;
+        }
+ 
+        String[] linePartsArr = lines[lineNum].split(",");
+        for (int i = 0; i < linePartsArr.length; i++){
+            String[] parts = linePartsArr[i].split("=");
+            if (parts[0].equals(QueryKey)){
+                linePartsArr[i] = QueryKey + "=" + QueryValue;
+            }
+        }
+ 
+        String newLine = "";
+        for (int i = 0; i < linePartsArr.length; i++){
+            newLine += linePartsArr[i] + ",";
+        }
+        newLine = newLine.substring(0, newLine.length() - 1);
+ 
+        lines[lineNum] = newLine;
+ 
+        this.data.clear();
+        for (int i = 0; i < lines.length; i++){
+            this.data.add(lines[i]);
+        }
+ 
+        write();
+    }
 
-    public ArrayList<String> getProducts(String productName){
+    public ArrayList<String> getProducts(String productName) {
         read();
 
         productName = productName.toLowerCase();
@@ -192,13 +244,13 @@ public class database {
         String[] lines = new String[this.data.size()];
         this.data.toArray(lines);
 
-        //search the 1st index for the product name
+        // search the 1st index for the product name
         ArrayList<String> products = new ArrayList<String>();
-        for (int i = 0; i < lines.length; i++){
+        for (int i = 0; i < lines.length; i++) {
             String[] lineParts = lines[i].split(",");
             String[] productNameParts = lineParts[1].split("=");
 
-            if (productNameParts[1].toLowerCase().contains(productName)){
+            if (productNameParts[1].toLowerCase().contains(productName)) {
                 System.out.println("Found " + productNameParts[1] + " in database");
                 products.add(lines[i]);
             }
