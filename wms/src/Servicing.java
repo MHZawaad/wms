@@ -120,7 +120,7 @@ public class Servicing{
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Servicing.png"));
+		jlabel.setIcon(new ImageIcon("res/Servicing.png"));
 		jpanel.add(jlabel);
 		
 		JTextArea textArea = new JTextArea();
