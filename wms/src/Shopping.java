@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -20,7 +19,7 @@ public class Shopping {
 		jframe.setTitle("Shopping");
 		jframe.setSize(new Dimension(1016,638));
 		jpanel=new JPanel();
-		jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.getContentPane().add(jpanel);
 		jpanel.setLayout(null);
         jframe.setResizable(false);
@@ -106,6 +105,8 @@ public class Shopping {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override
@@ -145,7 +146,6 @@ public class Shopping {
 		product1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
 				new SeeDetails();//of this product
 			}
 			@Override

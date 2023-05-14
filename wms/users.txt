@@ -1,0 +1,16 @@
+username=fsafasf,password=asfasfsfsafsfa1,accountType=Merchant,fullName=safas,ownerAddress=fasfasf,ownerPhone=asfasf,entityName=asfas,entityAddress=asfas,entityPhone=safa
+
+username=ssssssssssss,password=ssssssssssss1,accountType=Merchant,fullName=fasf,ownerAddress=asss,ownerPhone=sssssssssssssssss,entityName=sssssssssss,entityAddress=ssssssssssss,entityPhone=ssssssssssssss
+username=dsafadsf,password=sadfasdf2,accountType=Merchant,fullName=dfadsafdsaf,ownerAddress=dsafdsafsad,ownerPhone=dsafasdfasdf,entityName=dsafadsf,entityAddress=dsafdsafsa,entityPhone=dfasdfasdf
+username=dsafasdf,password=dsafasdf2,accountType=Merchant,fullName=dsafadsf,ownerAddress=dsafadsf,ownerPhone=dsafadsf,entityName=dasfad,entityAddress=dsafadf,entityPhone=dsafasdf
+username=adfasdf,password=adsfasdf12,accountType=Merchant,fullName=fsfdsa,ownerAddress=fadsfads,ownerPhone=fsadfasd,entityName=fdsfasd,entityAddress=fsdfadsf,entityPhone=dsfasdf
+username=dafadsf,password=dsafdsaf2,accountType=Merchant,fullName=dafadsfadsf,ownerAddress=dfdsaf,ownerPhone=dsafasdf,entityName=adfads,entityAddress=fsadfadsf,entityPhone=dsfdsaf
+username=dasfsadf,password=dasfsadf3434,accountType=Merchant,fullName=dafasdf,ownerAddress=sdafasdf,ownerPhone=dafadsf,entityName=dfasdfsad,entityAddress=fdsfasdf,entityPhone=dsafsadf
+username=mahdi,password=mahdi1234,accountType=Merchant,fullName=skfnsndfds,ownerAddress=dsafsadfdsf,ownerPhone=sdfdsafsadfasd,entityName=dafdsafsad,entityAddress=dsafsadf,entityPhone=dsfsdafsad
+username=asfasf,password=asfasfas1,accountType=Merchant,fullName=sfaasfsaf,ownerAddress=asfasf,ownerPhone=asfasf,entityName=asfasfasf,entityAddress=safasfas,entityPhone=asfasfafs
+username=asfasfasffdgsdg,password=asfasfas2,accountType=Merchant,fullName=sfasf,ownerAddress=asfasfas,ownerPhone=asfasf,entityName=asfasf,entityAddress=asfasf,entityPhone=asfasfa
+username=dsafasdffsdf,password=asdfasdf33,accountType=Merchant,fullName=zfasfas,ownerAddress=fsafadsf,ownerPhone=adfsadf,entityName=afdsfa,entityAddress=dfadfasdf,entityPhone=sdafasdf
+username=fasfasfsafasgsdgsd,password=fdsgdsfhg435,accountType=Merchant,fullName=sfasf,ownerAddress=asfasfasf,ownerPhone=asfasfasfasf,entityName=fasfasfas,entityAddress=fasfasfasf,entityPhone=asfsafasfas
+username=wehrkhwekjr,password=kwehrjkhwekrh2323,accountType=Merchant,fullName=eshfjehjkfhes,ownerAddress=wehjkrhwejkhrjwe,ownerPhone=jkehwrjkhwehr,entityName=ewjhrjwhejkrh,entityAddress=ewrhwekhrk,entityPhone=hwekrhjwehr
+username=Mahdi,password=mahdi1234,accountType=Merchant,fullName=Mahdi Hossain,ownerAddress=01842562964,ownerPhone=malibagh,dhaka,entityName=projectshop,entityAddress=shantinagar,entityPhone=0123456789
+

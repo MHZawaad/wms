@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -38,8 +37,9 @@ public class SeeDetails {
 		jlabel3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-			
-				//new PurchaseHistory();
+				
+				//adds product to cart
+				System.out.println("product added");
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -64,7 +64,7 @@ public class SeeDetails {
 		jlabel.setIcon(new ImageIcon("res/See Details.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
-		jframe.setLocationRelativeTo(null);
+		//jframe.setLocationRelativeTo(null);
 		jframe.setVisible(true);
 		
 		

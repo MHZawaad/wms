@@ -1,18 +1,12 @@
-
-
 import javax.swing.*;
-
-
-
 import java.awt.*;
 import java.awt.event.*;
-
-
 public class Servicing{
 	private JFrame jframe;
 	private JPanel jpanel;
 	private JLabel jlabel,jlabel1,jlabelback,jlabelsignout;
 	private JTextField jtextfield,jtextfield1,jtextfield2;
+	private JTextArea textArea;
 
 	Servicing(){
 		jframe=new JFrame();
@@ -43,14 +37,18 @@ public class Servicing{
 		jtextfield2.setBorder(null);
 		 jtextfield2.setBounds(190,329,275,70);
 		jpanel.add(jtextfield2);
+		textArea = new JTextArea();
+		textArea.setRows(4);
+		textArea.setBounds(190, 329, 275, 70);
 		
 		
-		jlabel1 = new JLabel("");
+		jlabel1 = new JLabel("");//submits validation request
 		jlabel1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new PurchaseHistory();
+				new Servicing1();
+				//or new Servicing2();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -99,6 +97,8 @@ public class Servicing{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override
@@ -117,16 +117,14 @@ public class Servicing{
 		jpanel.add(jlabelsignout);
 		
 		
+		
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
 		jlabel.setIcon(new ImageIcon("res/Servicing.png"));
 		jpanel.add(jlabel);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setDropMode(DropMode.ON);
-		textArea.setRows(4);
-		textArea.setBounds(190, 329, 275, 70);
+		
 		jpanel.add(textArea);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

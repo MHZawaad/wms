@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Main{
     public static void main(String[] args){ 
         System.out.println("Welcome to Wholesale Management System");
@@ -17,9 +16,9 @@ public class Main{
             if (!ret.equals("")){
                 String type = db.getQueryResult(value, "accountType");
                 if (type.equals("Merchant")){
-                    new merchantPage(value);
+                    new Menu();
                 }else if (type.equals("Manufacturer")){
-                    new manufacturerPage();
+                    //new manufacturerPage();
                 }
             }else{
                 new FrontPage();

@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -145,6 +144,8 @@ public class Menu {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override
@@ -164,6 +165,7 @@ public class Menu {
 
 		
 		jlabel=new JLabel();
+		jlabel.setLocation(0, 0);
 		jlabel.setSize(1000, 600);
 		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Menu.png"));
 		jpanel.add(jlabel);

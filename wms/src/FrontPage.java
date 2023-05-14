@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -36,7 +35,7 @@ public class FrontPage {
 		jpanel.add(jlabel);
 		jframe.setLocationRelativeTo(null);
 		jframe.setVisible(true);
-		for(int x=10;x>=0;x--) {
+		for(int x=2;x>=0;x--) {
 			jlabel1.setText("The program will start in: "+x);
 			try {
 				Thread.sleep(1000);

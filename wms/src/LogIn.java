@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 
 import utils.validator;
@@ -9,7 +8,7 @@ public class LogIn {
 	
 	protected JFrame jframe;
 	protected JPanel jpanel;
-	protected JLabel jlabel,jlabel1,jlabel2;
+	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,jlabel4;
 	protected JTextField jtextfield;
 	protected JPasswordField jpasswordfield;
 	private String username, password;
@@ -35,7 +34,7 @@ public class LogIn {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new UserType();
+				new SignUp();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -50,6 +49,32 @@ public class LogIn {
 			public void mouseReleased(MouseEvent e) {
 			}
 		});
+		
+		jtextfield = new JTextField();
+		jtextfield.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel3.setText("");
+			}
+		});
+		
+		jlabel3=new JLabel();
+		jlabel3.setText("Enter UserID");
+		jlabel3.setBounds(415, 260, 214, 29);
+		jpanel.add(jlabel3);
+		
+		jlabel4=new JLabel();
+		jlabel4.setText("Enter Password");
+		jlabel4.setBounds(415, 331, 214, 29);
+		jpanel.add(jlabel4);
+		jtextfield.setFont(new Font("Tahoma", Font.BOLD, 11));
+		jtextfield.setBorder(null);
+		jtextfield.setCaretColor(new Color(30, 144, 255));
+		jtextfield.setDisabledTextColor(new Color(240, 240, 240));
+		jtextfield.setOpaque(false);
+		jtextfield.setBounds(415, 260, 214, 29);
+		jpanel.add(jtextfield);
+		jtextfield.setColumns(10);
 		jlabel1.setBounds(455, 392, 118, 29);
 		jpanel.add(jlabel1);
 		
@@ -66,17 +91,16 @@ public class LogIn {
 		            }else {
 		                database db = new database("users.txt");
 		                if (db.match("username=" + username + ",password=" + password)) {
-		                    jframe.dispose();
-		                    new Menu();//Menu(username)//
 		                    database loggedIn = new database("loggedIn.txt");
 		                    loggedIn.add(username);
 		                    JOptionPane.showMessageDialog(jframe, "Login successful");
+		                    jframe.dispose();
 		                    
 		                    String type = db.getQueryResult(username, "accountType");
 		                    if (type.equals("Merchant")){
-		                        new merchantPage(username);
+		                    	new Menu();//Menu(username)//
 		                    }else if (type.equals("Manufacturer")){
-		                        new manufacturerPage();
+		                        //new manufacturerPage();
 		                    }
 		                } else {
 		                    JOptionPane.showMessageDialog(jframe, "Username or password is incorrect");
@@ -100,17 +124,13 @@ public class LogIn {
 		jlabel2.setBounds(586, 392, 70, 29);
 		jpanel.add(jlabel2);
 		
-		jtextfield = new JTextField();
-		jtextfield.setFont(new Font("Tahoma", Font.BOLD, 11));
-		jtextfield.setBorder(null);
-		jtextfield.setCaretColor(new Color(30, 144, 255));
-		jtextfield.setDisabledTextColor(new Color(240, 240, 240));
-		jtextfield.setOpaque(false);
-		jtextfield.setBounds(415, 260, 214, 29);
-		jpanel.add(jtextfield);
-		jtextfield.setColumns(10);
-		
 		jpasswordfield = new JPasswordField();
+		jpasswordfield.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel4.setText("");
+			}
+		});
 		jpasswordfield.setCaretColor(new Color(30, 144, 255));
 		jpasswordfield.setBorder(null);
 		jpasswordfield.setOpaque(false);

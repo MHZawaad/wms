@@ -1,9 +1,4 @@
-
-
 import javax.swing.*;
-
-
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -32,7 +27,7 @@ public class Servicing1{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new PurchaseHistory();
+				new Menu();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
