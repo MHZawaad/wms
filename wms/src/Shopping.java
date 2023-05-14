@@ -1,25 +1,35 @@
 import javax.swing.*;
+
+import utils.validator;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 public class Shopping {
 	
 	protected JFrame jframe;
-	protected JPanel jpanel,jpanel1,jpanel2,jpanel3,jpanel4,jpanel5;
+	protected JPanel jpanel,jpanel1,jpanel2,jpanel3,jpanel4,jpanel5,jpanel6;
 	protected JLabel jlabel,jlabelleft,jlabelsearch,jlabelback,jlabelsignout,jlabelcart;
 	protected JLabel product1,product2,product3,product4,product5,product6,product7,product8,product9,product10;
 	protected JTextField jtextfield;
+	
+	private JLabel[] labels = {product1,product2,product3,product4,product5,product6,product7,product8,product9,product10};
+	
+	private ArrayList<String> prodsname=new ArrayList<>();
+	private int productx,producty,productwidth,productheight;
 
 
 	public Shopping() {
 		
-		
-		jframe=new JFrame();
-		jpanel=new JPanel();//bg1
-		jpanel1=new JPanel();//grid layout button
+		jframe=new JFrame();//bg
+		jpanel=new JPanel();//buttonspage
+		jpanel1=new JPanel();//bg1
 		jpanel2=new JPanel();//bg2
 		jpanel3=new JPanel();//bg3
 		jpanel4=new JPanel();//bg3
 		jpanel5=new JPanel();//bg4
+		jpanel6=new JPanel();//bg5
+		
 		jframe.setTitle("Shopping");
 		jframe.setSize(new Dimension(1016,638));
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,6 +37,63 @@ public class Shopping {
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
+        
+        
+		product1=new JLabel();
+        product1.setBounds(266, 166, 140, 160);
+		jpanel.add(product1);
+		
+		product2 = new JLabel("");
+		product2.setBounds(100, 166, 140, 160);
+		jpanel.add(product2);
+		
+		product3 = new JLabel("");
+		product3.setBounds(431, 166, 140, 160);
+		jpanel.add(product3);
+		
+		product4 = new JLabel("");
+		product4.setBounds(594, 166, 140, 160);
+		jpanel.add(product4);
+		
+		product5 = new JLabel("");
+		product5.setBounds(760, 166, 140, 160);
+		jpanel.add(product5);
+		
+		product6 = new JLabel("");
+		product6.setBounds(760, 337, 140, 160);
+		jpanel.add(product6);
+		
+		product7 = new JLabel("");
+		product7.setBounds(594, 337, 140, 160);
+		jpanel.add(product7);
+		
+		product8 = new JLabel("");
+		product8.setBounds(431, 337, 140, 160);
+		jpanel.add(product8);
+		
+		product9 = new JLabel("");
+		product9.setBounds(266, 337, 140, 160);
+		jpanel.add(product9);
+		
+		product10 = new JLabel("");
+		product10.setBounds(100, 337, 140, 160);
+		jpanel.add(product10);
+		
+		
+		database db=new database("products.txt");
+		prodsname=db.getProdsName();
+		for(int x=0;x<prodsname.size();x++) {
+			System.out.println(prodsname.get(x));
+			product.setBounds(100, 166, 140, 160);
+			product.setText(prodsname.get(x));
+			
+		}
+		
+		
+		
+		
+		
+	
 		
 		jlabelsearch = new JLabel("\r\n");
 		jlabelsearch.addMouseListener(new MouseAdapter() {
@@ -60,7 +127,7 @@ public class Shopping {
 			}
 		});
 		
-		jpanel1 = new JPanel();
+		
 		jpanel1.setBounds(100, 530, 800, 35);
 		jpanel.add(jpanel1);
 		jpanel1.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
@@ -68,11 +135,12 @@ public class Shopping {
 		JButton button = new JButton("1");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jpanel.setVisible(true);
-				jpanel2.setVisible(false);
+				
+				jpanel2.setVisible(true);
 				jpanel3.setVisible(false);
 				jpanel4.setVisible(false);
 				jpanel5.setVisible(false);
+				jpanel6.setVisible(false);
 			}
 		});
 		jpanel1.add(button);
@@ -80,44 +148,54 @@ public class Shopping {
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				jpanel.setVisible(false);
-				jpanel2.setVisible(true);
-				jpanel3.setVisible(false);
+				
+				for (int i = 0; i < prodsname.size(); i++) {
+					labels[i].setText(prodsname.get(i));
+					jpanel.add(labels[i]);
+				}
+				
+			
+				
+				/*
+				jpanel2.setVisible(false);
+				jpanel3.setVisible(true);
 				jpanel4.setVisible(false);
 				jpanel5.setVisible(false);
+				jpanel6.setVisible(false);
+				*/
 			}
 		});
 		jpanel1.add(button_1);
 		JButton button_2 = new JButton("3");
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jpanel.setVisible(false);
 				jpanel2.setVisible(false);
-				jpanel3.setVisible(true);
-				jpanel4.setVisible(false);
+				jpanel3.setVisible(false);
+				jpanel4.setVisible(true);
 				jpanel5.setVisible(false);
+				jpanel6.setVisible(false);
 			}
 		});
 		jpanel1.add(button_2);
 		JButton button_3 = new JButton("4");
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jpanel.setVisible(false);
-				jpanel2.setVisible(false);
+				jpanel2.setVisible(true);
 				jpanel3.setVisible(false);
-				jpanel4.setVisible(true);
-				jpanel5.setVisible(false);
+				jpanel4.setVisible(false);
+				jpanel5.setVisible(true);
+				jpanel6.setVisible(false);
 			}
 		});
 		jpanel1.add(button_3);
 		JButton button_4 = new JButton("5");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				jpanel.setVisible(false);
-				jpanel2.setVisible(false);
+				jpanel2.setVisible(true);
 				jpanel3.setVisible(false);
 				jpanel4.setVisible(false);
-				jpanel5.setVisible(true);
+				jpanel5.setVisible(false);
+				jpanel6.setVisible(true);
 				
 			}
 		});
@@ -280,6 +358,7 @@ public class Shopping {
 		
 		
 	}
+	
 }
-	
-	
+
+
