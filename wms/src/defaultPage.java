@@ -5,7 +5,6 @@ import java.awt.LayoutManager;
 
 import javax.swing.*;
 import java.awt.event.*;
-import utils.components;
 
 public class defaultPage extends JFrame implements MouseListener{
     private JPanel mainPanel;
@@ -15,7 +14,7 @@ public class defaultPage extends JFrame implements MouseListener{
     public defaultPage() {
         super("Wholesale Management System - Home");
 
-        setSize(800, 450);
+        setSize(1000, 600);
 
         // disable maximize button and resizable window
         setResizable(false);
@@ -26,16 +25,15 @@ public class defaultPage extends JFrame implements MouseListener{
         mainPanel.setLayout(null);
 
         loginButton = new JButton("Login");
-        loginButton.setBounds(80, 250, 120, 40);
+        loginButton.setBounds(80, 400, 120, 40);
         loginButton.setBackground(Color.BLACK);
         loginButton.setForeground(Color.WHITE);
         loginButton.setBorder(BorderFactory.createEmptyBorder());
         loginButton.setContentAreaFilled(true);
-        loginButton.setFont(components.font);
         //loginButton.setOpaque(true);
         loginButton.setBorderPainted(false);
         loginButton.addActionListener(e -> {
-            new loginPage();
+            new LogIn();
             this.dispose();
         });
         loginButton.addMouseListener(this);
@@ -43,22 +41,21 @@ public class defaultPage extends JFrame implements MouseListener{
         mainPanel.add(loginButton);
 
         signupButton = new JButton("Signup");
-        signupButton.setBounds(220, 250, 120, 40);
+        signupButton.setBounds(220, 400, 120, 40);
         signupButton.setBackground(Color.BLACK);
         signupButton.setForeground(Color.WHITE);
         signupButton.setBorder(BorderFactory.createEmptyBorder());
         signupButton.setContentAreaFilled(true);
-        signupButton.setFont(components.font);
         signupButton.addActionListener(e -> {
-            new signUpPage();
+            new SignUp();
             this.dispose();
         });
         signupButton.addMouseListener(this);
         mainPanel.add(signupButton);
 
-        image = new JLabel(new ImageIcon("res/homeImage-min.png"), JLabel.CENTER);
+        image = new JLabel(new ImageIcon("res/FrontPage.png"), JLabel.CENTER);
         image.setVerticalAlignment(JLabel.BOTTOM);
-        image.setBounds(0, 0, 800, 450);
+        image.setBounds(0, 0, 1000, 600);
 
         mainPanel.add(image);
 

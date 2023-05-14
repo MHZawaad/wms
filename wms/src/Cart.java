@@ -1,7 +1,7 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.table.DefaultTableModel;
 public class Cart {
 	
 	protected JFrame jframe;
@@ -9,6 +9,7 @@ public class Cart {
 	protected JLabel jlabel,jlabel2,jlabelback,jlabelsignout;
 	protected JLabel product1,product2,product3,product4,product5;
 	protected JTextField jtextfield;
+	private JTable table;
 
 
 	public Cart() {
@@ -45,6 +46,55 @@ public class Cart {
 			public void mouseReleased(MouseEvent e) {
 			}
 		});
+		
+		JButton btnNewButton_1_1 = new JButton("remove");
+		btnNewButton_1_1.setBounds(878, 133, 82, 23);
+		jpanel.add(btnNewButton_1_1);
+		
+		JButton btnNewButton_1 = new JButton("+");
+		btnNewButton_1.setBounds(827, 133, 41, 23);
+		jpanel.add(btnNewButton_1);
+		
+		JButton btnNewButton = new JButton("-");
+		btnNewButton.setBounds(776, 133, 41, 23);
+		jpanel.add(btnNewButton);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Name", "Price", "Quantity"},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+			},
+			new String[] {
+				"New column", "New column", "New column"
+			}
+		));
+		table.setSurrendersFocusOnKeystroke(true);
+		table.setRowMargin(4);
+		table.setOpaque(false);
+		table.setIntercellSpacing(new Dimension(2, 2));
+		table.setInheritsPopupMenu(true);
+		table.setIgnoreRepaint(true);
+		table.setEditingRow(5);
+		table.setEditingColumn(4);
+		table.setColumnSelectionAllowed(true);
+		table.setCellSelectionEnabled(true);
+		table.setBorder(null);
+		table.setAutoCreateRowSorter(true);
+		table.setBounds(50, 120, 716, 400);
+		jpanel.add(table);
 		jlabel2.setBounds(426, 527, 153, 40);
 		jpanel.add(jlabel2);
 
@@ -79,6 +129,8 @@ public class Cart {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
+				database db = new database("loggedIn.txt");
+		        db.clear();
 				new LogIn();
 			}
 			@Override
@@ -100,7 +152,7 @@ public class Cart {
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Cart.png"));
+		jlabel.setIcon(new ImageIcon("res/Cart.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

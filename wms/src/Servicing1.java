@@ -1,9 +1,4 @@
-
-
 import javax.swing.*;
-
-
-
 import java.awt.*;
 import java.awt.event.*;
 
@@ -32,7 +27,7 @@ public class Servicing1{
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new PurchaseHistory();
+				new Menu();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -55,7 +50,7 @@ public class Servicing1{
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Servicing1.png"));
+		jlabel.setIcon(new ImageIcon("res/Servicing1.png"));
 		jpanel.add(jlabel);
 				
 		

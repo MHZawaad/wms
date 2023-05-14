@@ -1,4 +1,3 @@
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -31,7 +30,7 @@ public class UserType {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				jframe.dispose();
-				new SignUp1();
+				new SignUp();
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -101,7 +100,7 @@ public class UserType {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\TypeChoose.png"));
+		jlabel.setIcon(new ImageIcon("res/TypeChoose.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

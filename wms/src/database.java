@@ -12,6 +12,13 @@ public class database {
 
     public void read() {
         try {
+            // if file doesn't exist, create it
+            File file = new File(this.filename);
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+
             BufferedReader br = new BufferedReader(new FileReader(this.filename));
             String line = br.readLine();
             while (line != null) {
@@ -66,7 +73,7 @@ public class database {
 
     public void clear() {
         this.data.clear();
-        //clear file
+        // clear file
         write();
     }
 
@@ -92,30 +99,32 @@ public class database {
         return this.data.isEmpty();
     }
 
-
     /**
-     * Matches all the queries and returns true if all queries are true. 
+     * Matches all the queries and returns true if all queries are true.
      * Example,
-     * match("username=user1,address=dhaka") returns true if both values are present in the database
+     * match("username=user1,address=dhaka") returns true if both values are present
+     * in the database
+     * 
      * @param Query The Query string
      * @return true or false
      */
     public boolean match(String query) {
         read();
-    
+
         String[] queries = query.split(",");
 
         final int yetToMatch = queries.length;
-        
-        for (int i = 0; i < data.size(); i++){
+
+        for (int i = 0; i < data.size(); i++) {
             int matched = 0;
             String[] queryStrings = data.get(i).split(",");
-            for (int j = 0; j < queries.length; j++){
-                for (int k = 0; k < queryStrings.length; k++){
-                    //System.out.println(queryStrings[k] + " = " + queries[j] + " " + matched + " " + yetToMatch);
-                    if (queryStrings[k].equals(queries[j])){
+            for (int j = 0; j < queries.length; j++) {
+                for (int k = 0; k < queryStrings.length; k++) {
+                    // System.out.println(queryStrings[k] + " = " + queries[j] + " " + matched + " "
+                    // + yetToMatch);
+                    if (queryStrings[k].equals(queries[j])) {
                         matched++;
-                        if (matched == yetToMatch){
+                        if (matched == yetToMatch) {
                             return true;
                         }
                     }
@@ -129,42 +138,69 @@ public class database {
 
     /**
      * Searches the database for the QueryKey and returns the value
-     * @param PrimaryKey The cell's unique identifier or the 1st Key on which line the operation will be performed on
-     * @param QueryKey The query key which's value will be returned
+     * 
+     * @param PrimaryKey The cell's unique identifier or the 1st Key on which line
+     *                   the operation will be performed on
+     * @param QueryKey   The query key which's value will be returned
      * @return The query result
      */
-    public String getQueryResult(String PrimaryKey, String QueryKey){
+    public String getQueryResult(String PrimaryKey, String QueryKey) {
         read();
 
         String[] lines = new String[this.data.size()];
         this.data.toArray(lines);
 
-        
-        //get which line the user is on
+        // get which line the user is on
         int lineNum = -1;
-        for (int i = 0; i < lines.length; i++){
-            if (lines[i].equals("")){
+        for (int i = 0; i < lines.length; i++) {
+            if (lines[i].equals("")) {
                 continue;
             }
             String[] lineParts = lines[i].split(",");
-            if (lineParts[0].split("=")[1].equals(PrimaryKey)){
+            if (lineParts[0].split("=")[1].equals(PrimaryKey)) {
                 lineNum = i;
             }
         }
 
-        if (lineNum == -1){
+        if (lineNum == -1) {
             return "";
         }
 
         String[] linePartsArr = lines[lineNum].split(",");
-        for (int i = 0; i < linePartsArr.length; i++){
+        for (int i = 0; i < linePartsArr.length; i++) {
             String[] parts = linePartsArr[i].split("=");
-            if (parts[0].equals(QueryKey)){
+            if (parts[0].equals(QueryKey)) {
                 return parts[1];
             }
         }
 
         return "";
+    }
+
+
+    public ArrayList<String> getProducts(String productName){
+        read();
+
+        productName = productName.toLowerCase();
+
+        System.out.println("Searching for " + productName + " in database");
+
+        String[] lines = new String[this.data.size()];
+        this.data.toArray(lines);
+
+        //search the 1st index for the product name
+        ArrayList<String> products = new ArrayList<String>();
+        for (int i = 0; i < lines.length; i++){
+            String[] lineParts = lines[i].split(",");
+            String[] productNameParts = lineParts[1].split("=");
+
+            if (productNameParts[1].toLowerCase().contains(productName)){
+                System.out.println("Found " + productNameParts[1] + " in database");
+                products.add(lines[i]);
+            }
+        }
+
+        return products;
     }
 
 }
