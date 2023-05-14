@@ -35,15 +35,7 @@ public class FrontPage {
 		jpanel.add(jlabel);
 		jframe.setLocationRelativeTo(null);
 		jframe.setVisible(true);
-		for(int x=2;x>=0;x--) {
-			jlabel1.setText("The program will start in: "+x);
-			try {
-				Thread.sleep(1000);
 
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 		jframe.dispose();
 		new LogIn();
 		

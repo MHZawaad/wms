@@ -10,8 +10,6 @@ public class Shopping {
 	protected JTextField jtextfield;
 
 
-
-
 	public Shopping() {
 		
 		
@@ -31,6 +29,18 @@ public class Shopping {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				//searches for product
+			
+				//get text from e
+				String queryString = jtextfield.getText();
+
+				System.out.println(queryString);
+
+				//search for product
+				database producDatabase = new database("products.txt");
+
+				for (String item : producDatabase.getProducts(queryString)){
+					System.out.println(item);
+				}
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -125,7 +135,7 @@ public class Shopping {
 		jpanel.add(jlabelsignout);
 		
 		jtextfield=new JTextField();
-		jtextfield.setOpaque(false);
+		//jtextfield.setOpaque(false);
 		jtextfield.setCaretColor(Color.ORANGE);
 		jtextfield.setBorder(null);
 		jtextfield.setBounds(343,118,243,20);
