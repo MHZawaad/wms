@@ -140,7 +140,7 @@ public class LogIn {
 
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\LogIn.png"));
+		jlabel.setIcon(new ImageIcon("res/LogIn.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

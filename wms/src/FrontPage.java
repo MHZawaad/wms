@@ -26,7 +26,7 @@ public class FrontPage {
         jlabel1.setBounds(97,307,400,50);
 		jpanel.add(jlabel1);
 		
-		jlabel=new JLabel(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\FrontPage.png"), JLabel.CENTER);
+		jlabel=new JLabel(new ImageIcon("res/FrontPage.png"), JLabel.CENTER);
 		//jlabel.setSize(1000,600);
 		//jlabel.setIcon(new ImageIcon("res/FrontPage.png"));
 		//jframe.setBounds(0,0,1016,637); 
@@ -35,15 +35,7 @@ public class FrontPage {
 		jpanel.add(jlabel);
 		jframe.setLocationRelativeTo(null);
 		jframe.setVisible(true);
-		for(int x=2;x>=0;x--) {
-			jlabel1.setText("The program will start in: "+x);
-			try {
-				Thread.sleep(1000);
 
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 		jframe.dispose();
 		new LogIn();
 		

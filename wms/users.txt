@@ -1,2 +1,0 @@
-username=mahdi1234,password=mahdi1234,accountType=Merchant,fullName=dasdasdfsdfsf,ownerAddress=fdsfsdf,ownerPhone=fgadgsdgsd,entityName=jahjfhasjhf,entityAddress=jksfhjkahsfj,entityPhone=sjhfjkashfjk
-
