@@ -17,7 +17,7 @@ public class ChangePassword1{
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+       
    
 
 

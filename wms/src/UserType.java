@@ -22,7 +22,7 @@ public class UserType {
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+      
         
         
 		jlabel2 = new JLabel("");

@@ -18,7 +18,7 @@ public class Servicing{
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+      
         
         
 		jtextfield=new JTextField();
