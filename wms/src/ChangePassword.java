@@ -1,22 +1,23 @@
 import java.awt.event.*;
 import java.awt.*;
 import javax.swing.*;
-public class ChangePassword{
-	private JFrame jframe;
+
+import utils.*;
+
+public class ChangePassword extends JFrame{
 	private JPanel jpanel;
 	private JLabel jlabel,jlabel1,jlabelback,jlabelsignout;
 	private JTextField jtextfield,jtextfield1,jtextfield2;
 	public ChangePassword() {
 		
-		jframe=new JFrame();
-		jframe.setTitle("ChangePassword");
-		jframe.setSize(new Dimension(1016,638));
+		setTitle("ChangePassword");
+		setSize(new Dimension(1016,638));
 		jpanel=new JPanel();
-		jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		jframe.getContentPane().add(jpanel);
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+		getContentPane().add(jpanel);
 		jpanel.setLayout(null);
-        jframe.setResizable(false);
-        jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
+        setResizable(false);
+        setExtendedState(MAXIMIZED_HORIZ);
       
    
 	    jtextfield= new JTextField();
@@ -46,7 +47,45 @@ public class ChangePassword{
 		jlabel1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
+
+				String oldPassword = jtextfield.getText();
+				String newPassword = jtextfield1.getText();
+				String newPasswordConfirm = jtextfield2.getText();
+
+				System.out.println(oldPassword + "|" + newPassword + "|" + newPasswordConfirm);
+
+				validator val = new validator();
+
+				if (!val.validatePassword(oldPassword)) {
+					return;
+				}
+
+				if(!val.validatePassword(newPassword)){
+					return;
+				}
+
+				if(!val.validatePassword(newPasswordConfirm)){
+					return;
+				}
+
+				if (!newPassword.equals(newPasswordConfirm)){
+					JOptionPane.showMessageDialog(null, "Passwords do not match");
+
+					return;
+				}
+
+				database db = new database("users.txt");
+
+				String oldPassword_db = db.getQueryResult(Main.USERNAME, "password");
+
+				if (!oldPassword.equals(oldPassword_db)){
+					JOptionPane.showMessageDialog(null, "Old password is incorrect");
+					return;
+				}
+
+				db.update(Main.USERNAME, "password", newPassword);
+
+				dispose();
 				new ChangePassword1();
 			}
 			@Override
@@ -71,7 +110,7 @@ public class ChangePassword{
 		jlabelback.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
+				dispose();
 				new Menu();
 			}
 			@Override
@@ -95,7 +134,7 @@ public class ChangePassword{
 		jlabelsignout.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
+				dispose();
 				database db = new database("loggedIn.txt");
 		        db.clear();
 				new LogIn();
@@ -121,9 +160,9 @@ public class ChangePassword{
 		jlabel.setSize(1000, 600);
 		jlabel.setIcon(new ImageIcon("res/ChangePassword.png"));
 		jpanel.add(jlabel);
-		jframe.setBounds(0,0,1016,637);
-		jframe.setLocationRelativeTo(null);
-		jframe.setVisible(true);
+		setBounds(0,0,1016,637);
+		setLocationRelativeTo(null);
+		setVisible(true);
 		
 	}
 

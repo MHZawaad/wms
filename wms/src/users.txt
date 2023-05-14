@@ -1,2 +1,3 @@
-username=mahdi,password=mahdi1234,accountType=Merchant,fullName=regzesgseg,ownerAddress=zsegsegseg,ownerPhone=ezsgseg,entityName=zsegseg,entityAddress=zsegsegzsegseg,entityPhone=eszgeg
+username=mahdi,password=java1234,accountType=Merchant,fullName=regzesgseg,ownerAddress=zsegsegseg,ownerPhone=ezsgseg,entityName=zsegseg,entityAddress=zsegsegzsegseg,entityPhone=eszgeg
 
+username=fuad,password=dada1234,accountType=Merchant,fullName=regzesgseg,ownerAddress=zsegsegseg,ownerPhone=ezsgseg,entityName=zsegseg,entityAddress=zsegsegzsegseg,entityPhone=eszgeg

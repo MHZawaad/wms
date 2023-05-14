@@ -24,6 +24,7 @@ public class Main{
             
             database db = new database("users.txt");
             String ret = db.getQueryResult(USERNAME, "username");
+            System.out.println("Logged in as: " + USERNAME);
 
             if (!ret.equals("")){
                 String type = db.getQueryResult(USERNAME, "accountType");
