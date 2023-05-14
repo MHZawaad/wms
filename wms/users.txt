@@ -11,4 +11,6 @@ username=asfasf,password=asfasfas1,accountType=Merchant,fullName=sfaasfsaf,owner
 username=asfasfasffdgsdg,password=asfasfas2,accountType=Merchant,fullName=sfasf,ownerAddress=asfasfas,ownerPhone=asfasf,entityName=asfasf,entityAddress=asfasf,entityPhone=asfasfa
 username=dsafasdffsdf,password=asdfasdf33,accountType=Merchant,fullName=zfasfas,ownerAddress=fsafadsf,ownerPhone=adfsadf,entityName=afdsfa,entityAddress=dfadfasdf,entityPhone=sdafasdf
 username=fasfasfsafasgsdgsd,password=fdsgdsfhg435,accountType=Merchant,fullName=sfasf,ownerAddress=asfasfasf,ownerPhone=asfasfasfasf,entityName=fasfasfas,entityAddress=fasfasfasf,entityPhone=asfsafasfas
+username=wehrkhwekjr,password=kwehrjkhwekrh2323,accountType=Merchant,fullName=eshfjehjkfhes,ownerAddress=wehjkrhwejkhrjwe,ownerPhone=jkehwrjkhwehr,entityName=ewjhrjwhejkrh,entityAddress=ewrhwekhrk,entityPhone=hwekrhjwehr
+username=Mahdi,password=mahdi1234,accountType=Merchant,fullName=Mahdi Hossain,ownerAddress=01842562964,ownerPhone=malibagh,dhaka,entityName=projectshop,entityAddress=shantinagar,entityPhone=0123456789
 
