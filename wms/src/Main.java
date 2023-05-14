@@ -1,5 +1,8 @@
 import java.util.*;
 public class Main{
+	
+	public static String USERNAME;
+	
     public static void main(String[] args){ 
         System.out.println("Welcome to Wholesale Management System");
 
@@ -12,17 +15,18 @@ public class Main{
         }
 
         database checkpoint = new database("loggedIn.txt");
+        
+        USERNAME = checkpoint.get();
             
-        if (checkpoint.isEmpty()){
+        if (USERNAME.equals("")){
             new defaultPage();
         }else{
-            String value = checkpoint.getData().get(0);
             
             database db = new database("users.txt");
-            String ret = db.getQueryResult(value, "username");
+            String ret = db.getQueryResult(USERNAME, "username");
 
             if (!ret.equals("")){
-                String type = db.getQueryResult(value, "accountType");
+                String type = db.getQueryResult(USERNAME, "accountType");
                 if (type.equals("Merchant")){
                     new Menu();
                 }else if (type.equals("Manufacturer")){
