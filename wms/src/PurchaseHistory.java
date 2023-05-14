@@ -26,7 +26,7 @@ public class PurchaseHistory {
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+  
 		
 		jlabelsignout=new JLabel("");
 		jlabelsignout.setIcon(new ImageIcon(""));

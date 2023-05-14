@@ -17,7 +17,7 @@ public class ChangePassword{
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+      
    
 	    jtextfield= new JTextField();
 	    jtextfield.setAlignmentY(1.0f);

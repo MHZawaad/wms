@@ -8,16 +8,11 @@ import java.awt.event.*;
 import utils.validator;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class SignUp implements MouseListener {
 	
 	protected JFrame jframe;
-	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,nextButton,jlabel7,jlabel8,jlabel9,jlabel10,jlabel11,jlabel12,jlabel13,jlabel14,jlabelback,jlabelback1,jlabelback2,jlabwlback3;
+	protected JLabel jlabel,jlabel1,jlabel2,jlabel3,jlabel4,jlabel5,jlabel6,jlabel7,jlabel8,jlabel9,jlabel10,jlabel11,jlabel12,nextButton,jlabelback,jlabelback1,jlabelback2,jlabwlback3;
 	private JTextField jtextfield,jtextfield1,jtextfield2,jtextfield3,jtextfield4,jtextfield5,jtextfield6,jtextfield7,jtextfield8,jtextfield9;
     private JPanel jpanel1, jpanel2, jpanel3, jpanel4,jpanel5;
     private String username, password,confirmpassword, fullName, ownerAddress, ownerPhone, ownerEmail, accountType, entityName,
@@ -110,8 +105,31 @@ public class SignUp implements MouseListener {
 		jlabelback.addMouseListener(this);
 		jlabelback.setBounds(37,38,67,64);
 		jpanel2.add(jlabelback);
-
+		
+		
+		
+		jlabel4=new JLabel();
+		jlabel4.setText("Enter Password");
+		jlabel4.setBounds(401, 267, 194, 20);
+		jpanel2.add(jlabel4);
+		jlabel5=new JLabel();
+		jlabel5.setText("Enter Password");
+		jlabel5.setBounds(401, 324, 194, 20);
+		jpanel2.add(jlabel5);
+		jlabel6=new JLabel();
+		jlabel6.setText("Enter Password");
+		jlabel6.setBounds(401, 381, 194, 20);
+		jpanel2.add(jlabel6);
+		
+		
+		
 		jtextfield = new JTextField();
+		jtextfield.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel4.setText("");
+			}
+		});
 		jtextfield.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield.setCaretColor(new Color(30, 144, 255));
 		jtextfield.setBorder(null);
@@ -121,6 +139,12 @@ public class SignUp implements MouseListener {
 		jtextfield.setColumns(10);
 		
 		jtextfield1 = new JTextField();
+		jtextfield1.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel4.setText("");
+			}
+		});
 		jtextfield1.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield1.setOpaque(false);
 		jtextfield1.setBorder(null);
@@ -129,6 +153,12 @@ public class SignUp implements MouseListener {
 		jtextfield1.setColumns(10);
 		
 		jtextfield2 = new JTextField();
+		jtextfield2.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel4.setText("");
+			}
+		});
 		jtextfield2.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield2.setOpaque(false);
 		jtextfield2.setCaretColor(new Color(30, 144, 255));
@@ -183,7 +213,30 @@ public class SignUp implements MouseListener {
 		jlabelback.setBounds(37,38,67,64);
 		jpanel3.add(jlabelback);
 
+		
+		
+		jlabel7=new JLabel();
+		jlabel7.setText("");
+		jlabel7.setBounds(401, 267, 194, 20);
+		jpanel3.add(jlabel7);
+		jlabel8=new JLabel();
+		jlabel8.setText("Enter Password");
+		jlabel8.setBounds(401, 324, 194, 20);
+		jpanel3.add(jlabel8);
+		jlabel9=new JLabel();
+		jlabel9.setText("Enter Password");
+		jlabel9.setBounds(401, 381, 194, 20);
+		jpanel2.add(jlabel9);
+		
+		
+		
 		jtextfield3 = new JTextField();
+		jtextfield3.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel7.setText("");
+			}
+		});
 		jtextfield3.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield3.setCaretColor(new Color(30, 144, 255));
 		jtextfield3.setBorder(null);
@@ -193,6 +246,12 @@ public class SignUp implements MouseListener {
 		jtextfield3.setColumns(10);
 		
 		jtextfield4 = new JTextField();
+		jtextfield4.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel8.setText("");
+			}
+		});
 		jtextfield4.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield4.setOpaque(false);
 		jtextfield4.setBorder(null);
@@ -201,6 +260,12 @@ public class SignUp implements MouseListener {
 		jtextfield4.setColumns(10);
 		
 		jtextfield5 = new JTextField();
+		jtextfield5.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel9.setText("");
+			}
+		});
 		jtextfield5.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield5.setOpaque(false);
 		jtextfield5.setCaretColor(new Color(30, 144, 255));
@@ -275,7 +340,30 @@ public class SignUp implements MouseListener {
 		jlabelback.setBounds(37,38,67,64);
 		jpanel4.add(jlabelback);
 
+		
+		
+		jlabel10=new JLabel();
+		jlabel10.setText("UserID");
+		jlabel10.setBounds(415, 331, 214, 29);
+		jpanel4.add(jlabel10);
+		jlabel11=new JLabel();
+		jlabel11.setText("Create Password");
+		jlabel11.setBounds(415, 331, 214, 29);
+		jpanel4.add(jlabel11);
+		jlabel12=new JLabel();
+		jlabel12.setText("Confirm Password");
+		jlabel12.setBounds(415, 331, 214, 29);
+		jpanel4.add(jlabel12);
+		
+		
+		
 		jtextfield6 = new JTextField();
+		jtextfield6.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel10.setText("");
+			}
+		});
 		jtextfield6.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield6.setCaretColor(new Color(30, 144, 255));
 		jtextfield6.setBorder(null);
@@ -285,6 +373,12 @@ public class SignUp implements MouseListener {
 		jtextfield6.setColumns(10);
 		
 		jtextfield7 = new JTextField();
+		jtextfield7.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel11.setText("");
+			}
+		});
 		jtextfield7.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield7.setOpaque(false);
 		jtextfield7.setBorder(null);
@@ -293,6 +387,12 @@ public class SignUp implements MouseListener {
 		jtextfield7.setColumns(10);
 		
 		jtextfield8 = new JTextField();
+		jtextfield8.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent e) {
+				jlabel12.setText("");
+			}
+		});
 		jtextfield8.setFont(new Font("Tahoma", Font.BOLD, 11));
 		jtextfield8.setOpaque(false);
 		jtextfield8.setCaretColor(new Color(30, 144, 255));

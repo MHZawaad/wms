@@ -21,7 +21,7 @@ public class SeeDetails {
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+       
 
         jlabel1 = new JLabel("");
     	//total amount
