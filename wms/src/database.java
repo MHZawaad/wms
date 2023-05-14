@@ -92,6 +92,20 @@ public class database {
     public String get() {
     	return getData().get(0);
     }
+    public ArrayList<String> getProdsName(){
+    	read();
+    	ArrayList<String>temp=new ArrayList<String>();
+    	for(String _data:this.data) {
+    		
+    		temp.add(_data.split(",")[1].split("=")[1]);
+    		
+    	
+
+    	}
+    	
+    	return temp;
+    }
+    
 
     public boolean contains(String line) {
         read();

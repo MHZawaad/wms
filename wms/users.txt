@@ -4,4 +4,5 @@ username=dddd,password=abcd1234,accountType=Merchant,fullName=d,ownerAddress=d,o
 username=sdadasdas,password=dasdasd332,accountType=Merchant,fullName=sdas,ownerAddress=dasdas,ownerPhone=dasd,entityName=sad,entityAddress=dada,entityPhone=dada
 username=mahdi1234,password=mahdi1234,accountType=Merchant,fullName=mahdi,ownerAddress=malibagh,ownerPhone=12345,entityName=fuad,entityAddress=bashabo,entityPhone=12345
 username=sfasf,password=afasfsaf2,accountType=Merchant,fullName=asfas,ownerAddress=fasf,ownerPhone=asfasf,entityName=sfafa,entityAddress=sfasf,entityPhone=afasfa
+username=asdasdaads,password=sdasd2434,accountType=Merchant,fullName=dasdasd,ownerAddress=sdasda,ownerPhone=adasda,entityName=asdasdasda,entityAddress=sdasda,entityPhone=sdasdas
 
