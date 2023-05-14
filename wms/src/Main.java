@@ -5,7 +5,7 @@ public class Main{
 
 
         database prod = new database("products.txt");
-        String[] prods = prod.getProducts("salt");
+        ArrayList<String> prods = prod.getProducts("salt");
 
         for (String item : prods){
             System.out.println(item);
