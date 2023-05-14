@@ -152,7 +152,7 @@ public class Cart {
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\Cart.png"));
+		jlabel.setIcon(new ImageIcon("res/Cart.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

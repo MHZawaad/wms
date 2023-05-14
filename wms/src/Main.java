@@ -3,10 +3,18 @@ public class Main{
     public static void main(String[] args){ 
         System.out.println("Welcome to Wholesale Management System");
 
+
+        database prod = new database("products.txt");
+        String[] prods = prod.getProducts("salt");
+
+        for (String item : prods){
+            System.out.println(item);
+        }
+
         database checkpoint = new database("loggedIn.txt");
             
         if (checkpoint.isEmpty()){
-            new FrontPage();
+            new defaultPage();
         }else{
             String value = checkpoint.getData().get(0);
             
@@ -21,7 +29,7 @@ public class Main{
                     //new manufacturerPage();
                 }
             }else{
-                new FrontPage();
+                new LogIn();
             }
         }
     }
