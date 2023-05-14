@@ -73,7 +73,7 @@ public class SignUp implements MouseListener {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\TypeChoose.png"));
+		jlabel.setIcon(new ImageIcon("res/TypeChoose.png"));
 		jpanel1.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);
@@ -139,7 +139,7 @@ public class SignUp implements MouseListener {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp1.png"));
+		jlabel.setIcon(new ImageIcon("res/SignUp1.png"));
 		jpanel2.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);
@@ -211,7 +211,7 @@ public class SignUp implements MouseListener {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp2.png"));
+		jlabel.setIcon(new ImageIcon("res/SignUp2.png"));
 		jpanel3.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);
@@ -303,7 +303,7 @@ public class SignUp implements MouseListener {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp3.png"));
+		jlabel.setIcon(new ImageIcon("res/SignUp3.png"));
 		jpanel4.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);
@@ -336,7 +336,7 @@ public class SignUp implements MouseListener {
 		
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\bin\\res\\SignUp4.png"));
+		jlabel.setIcon(new ImageIcon("res/SignUp4.png"));
 		jpanel5.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);
