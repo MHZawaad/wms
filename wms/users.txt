@@ -1,0 +1,4 @@
+username=akhirul,password=akhirul1234,accountType=Merchant,fullName=mahdi,ownerAddress=malibagh,ownerPhone=12345,entityName=fuad shop,entityAddress=bashabo,entityPhone=bashabo
+
+username=dddd,password=abcd1234,accountType=Merchant,fullName=d,ownerAddress=d,ownerPhone=d,entityName=d,entityAddress=d,entityPhone=d
+

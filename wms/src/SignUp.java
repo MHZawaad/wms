@@ -109,15 +109,15 @@ public class SignUp implements MouseListener {
 		
 		
 		jlabel4=new JLabel();
-		jlabel4.setText("Enter Password");
+		jlabel4.setText("Your Name");
 		jlabel4.setBounds(401, 267, 194, 20);
 		jpanel2.add(jlabel4);
 		jlabel5=new JLabel();
-		jlabel5.setText("Enter Password");
+		jlabel5.setText("Your Address");
 		jlabel5.setBounds(401, 324, 194, 20);
 		jpanel2.add(jlabel5);
 		jlabel6=new JLabel();
-		jlabel6.setText("Enter Password");
+		jlabel6.setText("Enter Phone no.");
 		jlabel6.setBounds(401, 381, 194, 20);
 		jpanel2.add(jlabel6);
 		
@@ -142,7 +142,7 @@ public class SignUp implements MouseListener {
 		jtextfield1.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				jlabel4.setText("");
+				jlabel5.setText("");
 			}
 		});
 		jtextfield1.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -156,7 +156,7 @@ public class SignUp implements MouseListener {
 		jtextfield2.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
-				jlabel4.setText("");
+				jlabel6.setText("");
 			}
 		});
 		jtextfield2.setFont(new Font("Tahoma", Font.BOLD, 11));
@@ -216,17 +216,17 @@ public class SignUp implements MouseListener {
 		
 		
 		jlabel7=new JLabel();
-		jlabel7.setText("");
+		jlabel7.setText("Shop Name");
 		jlabel7.setBounds(401, 267, 194, 20);
 		jpanel3.add(jlabel7);
 		jlabel8=new JLabel();
-		jlabel8.setText("Enter Password");
+		jlabel8.setText("Shop Address");
 		jlabel8.setBounds(401, 324, 194, 20);
 		jpanel3.add(jlabel8);
 		jlabel9=new JLabel();
-		jlabel9.setText("Enter Password");
+		jlabel9.setText("Shop Phone no.");
 		jlabel9.setBounds(401, 381, 194, 20);
-		jpanel2.add(jlabel9);
+		jpanel3.add(jlabel9);
 		
 		
 		
@@ -344,15 +344,15 @@ public class SignUp implements MouseListener {
 		
 		jlabel10=new JLabel();
 		jlabel10.setText("UserID");
-		jlabel10.setBounds(415, 331, 214, 29);
+		jlabel10.setBounds(401, 267, 194, 20);
 		jpanel4.add(jlabel10);
 		jlabel11=new JLabel();
 		jlabel11.setText("Create Password");
-		jlabel11.setBounds(415, 331, 214, 29);
+		jlabel11.setBounds(401, 324, 194, 20);
 		jpanel4.add(jlabel11);
 		jlabel12=new JLabel();
 		jlabel12.setText("Confirm Password");
-		jlabel12.setBounds(415, 331, 214, 29);
+		jlabel12.setBounds(401, 381, 194, 20);
 		jpanel4.add(jlabel12);
 		
 		
