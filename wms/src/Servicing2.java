@@ -19,7 +19,7 @@ public class Servicing2{
 		jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-        jframe.setVisible(true);
+       
         
 
 		jlabel1 = new JLabel("");
