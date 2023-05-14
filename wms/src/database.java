@@ -88,6 +88,10 @@ public class database {
         read();
         return this.data;
     }
+    
+    public String get() {
+    	return getData().get(0);
+    }
 
     public boolean contains(String line) {
         read();

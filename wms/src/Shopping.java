@@ -4,7 +4,7 @@ import java.awt.event.*;
 public class Shopping {
 	
 	protected JFrame jframe;
-	protected JPanel jpanel,jpanel1;
+	protected JPanel jpanel,jpanel1,jpanel2,jpanel3,jpanel4,jpanel5;
 	protected JLabel jlabel,jlabelleft,jlabelsearch,jlabelback,jlabelsignout,jlabelcart;
 	protected JLabel product1,product2,product3,product4,product5,product6,product7,product8,product9,product10;
 	protected JTextField jtextfield;
@@ -14,9 +14,14 @@ public class Shopping {
 		
 		
 		jframe=new JFrame();
+		jpanel=new JPanel();//bg1
+		jpanel1=new JPanel();//grid layout button
+		jpanel2=new JPanel();//bg2
+		jpanel3=new JPanel();//bg3
+		jpanel4=new JPanel();//bg3
+		jpanel5=new JPanel();//bg4
 		jframe.setTitle("Shopping");
 		jframe.setSize(new Dimension(1016,638));
-		jpanel=new JPanel();
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		jframe.getContentPane().add(jpanel);
 		jpanel.setLayout(null);
@@ -54,6 +59,69 @@ public class Shopping {
 			public void mouseReleased(MouseEvent e) {
 			}
 		});
+		
+		jpanel1 = new JPanel();
+		jpanel1.setBounds(100, 530, 800, 35);
+		jpanel.add(jpanel1);
+		jpanel1.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
+		
+		JButton button = new JButton("1");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jpanel.setVisible(true);
+				jpanel2.setVisible(false);
+				jpanel3.setVisible(false);
+				jpanel4.setVisible(false);
+				jpanel5.setVisible(false);
+			}
+		});
+		jpanel1.add(button);
+		JButton button_1 = new JButton("2");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				jpanel.setVisible(false);
+				jpanel2.setVisible(true);
+				jpanel3.setVisible(false);
+				jpanel4.setVisible(false);
+				jpanel5.setVisible(false);
+			}
+		});
+		jpanel1.add(button_1);
+		JButton button_2 = new JButton("3");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jpanel.setVisible(false);
+				jpanel2.setVisible(false);
+				jpanel3.setVisible(true);
+				jpanel4.setVisible(false);
+				jpanel5.setVisible(false);
+			}
+		});
+		jpanel1.add(button_2);
+		JButton button_3 = new JButton("4");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jpanel.setVisible(false);
+				jpanel2.setVisible(false);
+				jpanel3.setVisible(false);
+				jpanel4.setVisible(true);
+				jpanel5.setVisible(false);
+			}
+		});
+		jpanel1.add(button_3);
+		JButton button_4 = new JButton("5");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				jpanel.setVisible(false);
+				jpanel2.setVisible(false);
+				jpanel3.setVisible(false);
+				jpanel4.setVisible(false);
+				jpanel5.setVisible(true);
+				
+			}
+		});
+		jpanel1.add(button_4);
 		
 		
 		
@@ -140,17 +208,6 @@ public class Shopping {
 		jtextfield.setBounds(343,118,243,20);
 		jpanel.add(jtextfield);
 		
-		jpanel1 = new JPanel();
-		jpanel1.setBounds(100, 530, 800, 35);
-		jpanel.add(jpanel1);
-		jpanel1.setLayout(new FlowLayout(FlowLayout.CENTER,0,0));
-		
-		jpanel1.add(new JButton("1"));
-		jpanel1.add(new JButton("2"));
-		jpanel1.add(new JButton("3"));
-		jpanel1.add(new JButton("4"));
-		jpanel1.add(new JButton("5"));
-		
 		product1 = new JLabel("");
 		product1.addMouseListener(new MouseAdapter() {
 			@Override
@@ -214,7 +271,7 @@ public class Shopping {
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res/Shopping1.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\Resources\\Shopping1.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);
