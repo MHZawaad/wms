@@ -96,12 +96,7 @@ public class LogIn {
 		                    JOptionPane.showMessageDialog(jframe, "Login successful");
 		                    jframe.dispose();
 		                    
-		                    String type = db.getQueryResult(username, "accountType");
-		                    if (type.equals("Merchant")){
-		                    	new Menu();//Menu(username)//
-		                    }else if (type.equals("Manufacturer")){
-		                        //new manufacturerPage();
-		                    }
+							new Menu();
 		                } else {
 		                    JOptionPane.showMessageDialog(jframe, "Username or password is incorrect");
 		                }
@@ -140,7 +135,7 @@ public class LogIn {
 
 		jlabel=new JLabel();
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res/LogIn.png"));
+		jlabel.setIcon(new ImageIcon("res\\LogIn.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

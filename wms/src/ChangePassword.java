@@ -158,7 +158,7 @@ public class ChangePassword extends JFrame{
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\Resources\\ChangePassword.png"));
+		jlabel.setIcon(new ImageIcon("res\\ChangePassword.png"));
 		jpanel.add(jlabel);
 		setBounds(0,0,1016,637);
 		setLocationRelativeTo(null);

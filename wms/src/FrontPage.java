@@ -26,7 +26,7 @@ public class FrontPage {
         jlabel1.setBounds(97,307,400,50);
 		jpanel.add(jlabel1);
 		
-		jlabel=new JLabel(new ImageIcon("res/FrontPage.png"), JLabel.CENTER);
+		jlabel=new JLabel(new ImageIcon("res\\FrontPage.png"), JLabel.CENTER);
 		//jlabel.setSize(1000,600);
 		//jlabel.setIcon(new ImageIcon("res/FrontPage.png"));
 		//jframe.setBounds(0,0,1016,637); 

@@ -50,7 +50,7 @@ public class Servicing2{
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res/Servicing2.png"));
+		jlabel.setIcon(new ImageIcon("res\\Servicing2.png"));
 		jpanel.add(jlabel);
 				
 		

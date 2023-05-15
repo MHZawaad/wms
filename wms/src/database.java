@@ -89,22 +89,45 @@ public class database {
     }
 
     public String get() {
-        return getData().get(0);
+        read();
+        if (this.data.size() > 0) {
+            return this.data.get(0);
+        } else {
+            return "";
+        }
     }
-    public ArrayList<String> getProdsName(){
-    	read();
-    	ArrayList<String>temp=new ArrayList<String>();
-    	for(String _data:this.data) {
-    		
-    		temp.add(_data.split(",")[1].split("=")[1]);
-    		
-    	
 
-    	}
-    	
-    	return temp;
+    public ArrayList<String> getProdsName() {
+        read();
+        ArrayList<String> temp = new ArrayList<String>();
+        for (String _data : this.data) {
+            temp.add(_data.split(",")[1].split("=")[1]);
+        }
+
+        return temp;
     }
-    
+
+    public ArrayList<product> getAllProducts() {
+        read();
+        ArrayList<product> products = new ArrayList<product>();
+        for (String line : this.data) {
+            String[] parts = line.split(",");
+            String id = parts[0];
+            String name = parts[1];
+            String price = parts[3];
+            String manufactureDate = parts[5];
+            String expiryDate = parts[6];
+
+            //System.out.println("Product name: " + nameParts[1]);
+
+            product prod = new product(id.split("=")[1], name.split("=")[1], price.split("=")[1], manufactureDate.split("=")[1], expiryDate.split("=")[1]);
+            products.add(prod);
+        }
+
+        System.out.println("Size: " + products.size());
+
+        return products;
+    }
 
     public boolean contains(String line) {
         read();
@@ -194,57 +217,58 @@ public class database {
         return "";
     }
 
-     /**
+    /**
      * 
-     * @param PrimaryKey The cell's unique identifier or the 1st Key on which line the operation will be performed on
-     * @param QueryKey The query key which's value will be updated
+     * @param PrimaryKey The cell's unique identifier or the 1st Key on which line
+     *                   the operation will be performed on
+     * @param QueryKey   The query key which's value will be updated
      * @param QueryValue The new value
      */
-    public void update(String PrimaryKey, String QueryKey, String QueryValue){
+    public void update(String PrimaryKey, String QueryKey, String QueryValue) {
         read();
- 
+
         String[] lines = new String[this.data.size()];
         this.data.toArray(lines);
- 
+
         System.out.println("Updating " + QueryKey + " with " + QueryValue + " for " + PrimaryKey);
- 
-        //get which line the user is on
+
+        // get which line the user is on
         int lineNum = -1;
-        for (int i = 0; i < lines.length; i++){
-            if (lines[i].equals("")){
+        for (int i = 0; i < lines.length; i++) {
+            if (lines[i].equals("")) {
                 continue;
             }
             String[] lineParts = lines[i].split(",");
-            if (lineParts[0].split("=")[1].equals(PrimaryKey)){
+            if (lineParts[0].split("=")[1].equals(PrimaryKey)) {
                 lineNum = i;
             }
         }
- 
-        if (lineNum == -1){
+
+        if (lineNum == -1) {
             return;
         }
- 
+
         String[] linePartsArr = lines[lineNum].split(",");
-        for (int i = 0; i < linePartsArr.length; i++){
+        for (int i = 0; i < linePartsArr.length; i++) {
             String[] parts = linePartsArr[i].split("=");
-            if (parts[0].equals(QueryKey)){
+            if (parts[0].equals(QueryKey)) {
                 linePartsArr[i] = QueryKey + "=" + QueryValue;
             }
         }
- 
+
         String newLine = "";
-        for (int i = 0; i < linePartsArr.length; i++){
+        for (int i = 0; i < linePartsArr.length; i++) {
             newLine += linePartsArr[i] + ",";
         }
         newLine = newLine.substring(0, newLine.length() - 1);
- 
+
         lines[lineNum] = newLine;
- 
+
         this.data.clear();
-        for (int i = 0; i < lines.length; i++){
+        for (int i = 0; i < lines.length; i++) {
             this.data.add(lines[i]);
         }
- 
+
         write();
     }
 

@@ -27,11 +27,27 @@ public class Shopping extends JFrame {
         int x = 100;
         int y = 166;
 
+
+		ArrayList<product> products = new database("products.txt").getAllProducts();
+
+		/*
+		System.out.println(products.size());
+		for (int i = 0; i < products.size(); i++){
+			System.out.println("-------------------------------------------");
+			System.out.println("ID: " + products.get(i).productID);
+			System.out.println("Name: " + products.get(i).productName);
+			System.out.println("Price: " + products.get(i).productPrice);
+			System.out.println("MFD: " + products.get(i).manufacturingDate);
+			System.out.println("EXP: " + products.get(i).expiryDate);
+			System.out.println("-------------------------------------------");
+		}
+		*/
+
         for (int i = 0; i < 10; i++) {
             Rectangle bounds = new Rectangle(x, y, 140, 160);
             labelBounds.add(bounds);
 
-            JLabel label = new JLabel("Product " + (i + 1));//fuad ekhane tui 10 ta product er nam boshabi from database
+            JLabel label = new JLabel(products.get(i).productName);//fuad ekhane tui 10 ta product er nam boshabi from database
             label.setBounds(bounds);
 
             label.addMouseListener(new MouseAdapter() {
@@ -196,7 +212,7 @@ public class Shopping extends JFrame {
         jlabelimage=new JLabel();
 		jlabelimage.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabelimage.setSize(1000, 600);
-		jlabelimage.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\Resources\\Shopping1.png"));
+		jlabelimage.setIcon(new ImageIcon("res\\Shopping1.png"));
 		panel.add(jlabelimage);
 		this.setBounds(0,0,1016,637);
 		this.setLocationRelativeTo(null);
