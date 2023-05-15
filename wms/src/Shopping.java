@@ -12,6 +12,7 @@ public class Shopping extends JFrame {
 	private JLabel jlabelimage,addtocart;
 	private JPanel panel;
 	private List<Rectangle> labelBounds;
+	private String selected;
     public Shopping() {
     	
 		setTitle("Shopping");
@@ -37,6 +38,7 @@ public class Shopping extends JFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     System.out.println(label.getText() + " clicked!");
+                    selected="";//productid or product name that was selected
                 }
             });
 
@@ -55,7 +57,8 @@ public class Shopping extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				
 				//adds product to cart
-				System.out.println("product added");
+				System.out.println("product added to cart:\n"+selected+","+selected);//fuad step1: select a product step 2 : click on add to cart button step3: cart.txt product is added with quantity 1
+				
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
