@@ -21,8 +21,7 @@ public class Shopping extends JFrame {
         setExtendedState(JFrame.MAXIMIZED_HORIZ);
 
         panel = new JPanel();
-        panel.setLayout(null); // Set panel layout to null for manual positioning
-
+        panel.setLayout(null); 
         labelBounds = new ArrayList<>();
         int x = 100;
         int y = 166;
