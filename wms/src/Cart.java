@@ -51,7 +51,7 @@ public class Cart {
         jpanel.add(removeButton);
         
         addButton = new JButton("+");
-        addButton.setBounds(625, 482, 67, 27);
+        addButton.setBounds(794, 482, 67, 27);
         addButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,7 +70,7 @@ public class Cart {
         jpanel.add(addButton);
 
         subtractButton = new JButton("-");
-        subtractButton.setBounds(794, 482, 67, 27);
+        subtractButton.setBounds(625, 482, 67, 27);
         subtractButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
