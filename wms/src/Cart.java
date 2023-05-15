@@ -47,37 +47,33 @@ public class Cart {
 		});
 		
 		JButton btnNewButton_1_1 = new JButton("remove");
-		btnNewButton_1_1.setBounds(878, 133, 82, 23);
+		btnNewButton_1_1.setBounds(818, 527, 82, 27);
 		jpanel.add(btnNewButton_1_1);
 		
 		JButton btnNewButton_1 = new JButton("+");
-		btnNewButton_1.setBounds(827, 133, 41, 23);
+		btnNewButton_1.setBounds(750, 527, 41, 27);
 		jpanel.add(btnNewButton_1);
 		
 		JButton btnNewButton = new JButton("-");
-		btnNewButton.setBounds(776, 133, 41, 23);
+		btnNewButton.setBounds(699, 527, 41, 27);
 		jpanel.add(btnNewButton);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Name", "Price", "Quantity"},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
+				{"Product name                     ||                   Product Price             ||                Product Quantity"},
+				{null},
+				{null},
+				{null},
+				{null},
+				{null},
+				{null},
+				{null},
+				{null},
+				{null},
 			},
 			new String[] {
-				"New column", "New column", "New column"
+				"New column"
 			}
 		));
 		table.setSurrendersFocusOnKeystroke(true);
@@ -92,7 +88,7 @@ public class Cart {
 		table.setCellSelectionEnabled(true);
 		table.setBorder(null);
 		table.setAutoCreateRowSorter(true);
-		table.setBounds(50, 120, 716, 400);
+		table.setBounds(100, 116, 800, 400);
 		jpanel.add(table);
 		jlabel2.setBounds(426, 527, 153, 40);
 		jpanel.add(jlabel2);
@@ -147,11 +143,15 @@ public class Cart {
 		});
 		jpanel.add(jlabelsignout);
 		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(128, 539, 111, 28);
+		jpanel.add(lblNewLabel);
+		
 		
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res/Cart.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\Resources\\Cart.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		jframe.setLocationRelativeTo(null);

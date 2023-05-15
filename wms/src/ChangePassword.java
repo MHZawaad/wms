@@ -26,19 +26,19 @@ public class ChangePassword extends JFrame{
 	    jtextfield.setBorder(null);
 	    jtextfield.setCaretColor(new Color(30, 144, 255));
 	    jtextfield.setFont(new Font("Tahoma", Font.BOLD, 11));
-	    jtextfield.setBounds(412,274,154,26);
+	    jtextfield.setBounds(412,274,175,26);
 	    jpanel.add(jtextfield);
 	    jtextfield1= new JTextField();//new password
 	    jtextfield1.setCaretColor(new Color(30, 144, 255));
 	    jtextfield1.setBorder(null);
 	    jtextfield1.setFont(new Font("Tahoma", Font.BOLD, 11));
-	    jtextfield1.setBounds(412,318,154,26);
+	    jtextfield1.setBounds(412,317,175,24);
 	    jpanel.add(jtextfield1);
 	    jtextfield2= new JTextField();
 	    jtextfield2.setBorder(null);
 	    jtextfield2.setCaretColor(new Color(30, 144, 255));
 	    jtextfield2.setFont(new Font("Tahoma", Font.BOLD, 11));
-	    jtextfield2.setBounds(412,355,154,26);
+	    jtextfield2.setBounds(412,358,175,24);
 	    jpanel.add(jtextfield2);
 	    
 	    
@@ -158,7 +158,7 @@ public class ChangePassword extends JFrame{
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res/ChangePassword.png"));
+		jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\Resources\\ChangePassword.png"));
 		jpanel.add(jlabel);
 		setBounds(0,0,1016,637);
 		setLocationRelativeTo(null);
