@@ -1,181 +1,160 @@
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-import javax.swing.table.DefaultTableModel;
 public class Cart {
-	
-	protected JFrame jframe;
-	protected JPanel jpanel;
-	protected JLabel jlabel,jlabel2,jlabelback,jlabelsignout;
-	protected JLabel product1,product2,product3,product4,product5;
-	protected JTextField jtextfield;
-	private JTable table;
 
+    protected JFrame jframe;
+    protected JPanel jpanel;
+    protected JLabel jlabel, jlabel2, jlabelback, jlabelsignout;
+    protected JTable table;
+    private int quantity;
+    private JButton addButton,subtractButton;
+    String quantityString;
+    public Cart() {
 
-	public Cart() {
-		
-		
-		jframe=new JFrame();
-		jframe.setTitle("Cart");
-		jframe.setSize(new Dimension(1016,638));
-		jpanel=new JPanel();
-		jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		jframe.getContentPane().add(jpanel);
-		jpanel.setLayout(null);
+        jframe = new JFrame();
+        jframe.setTitle("Cart");
+        jframe.setSize(new Dimension(1016, 638));
+        jpanel = new JPanel();
+        jframe.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        jframe.getContentPane().add(jpanel);
+        jpanel.setLayout(null);
         jframe.setResizable(false);
         jframe.setExtendedState(JFrame.MAXIMIZED_HORIZ);
-      
-		jlabel2 = new JLabel("");
-		jlabel2.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new PurchaseHistory();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		
-		JButton btnNewButton_1_1 = new JButton("remove");
-		btnNewButton_1_1.setBounds(818, 527, 82, 27);
-		jpanel.add(btnNewButton_1_1);
-		
-		JButton btnNewButton_1 = new JButton("+");
-		btnNewButton_1.setBounds(750, 527, 41, 27);
-		jpanel.add(btnNewButton_1);
-		
-		JButton btnNewButton = new JButton("-");
-		btnNewButton.setBounds(699, 527, 41, 27);
-		jpanel.add(btnNewButton);
-		
 
-		//get cart products from cdatabase
-		database db = new database("cart.txt");
-		
-		ArrayList<product> products = db.getCart();
+        jlabel2 = new JLabel("");
+        jlabel2.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                jframe.dispose();
+                new PurchaseHistory();
+            }
+        });
+        jlabel2.setBounds(426, 527, 153, 40);
+        jpanel.add(jlabel2);
 
-		for ( int i = 0; i < products.size(); i++){
-			System.out.println(products.get(i).productName);
-		}
+        JButton removeButton = new JButton("Remove");
+        removeButton.setBounds(702, 482, 82, 27);
+        removeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    DefaultTableModel model = (DefaultTableModel) table.getModel();
+                    model.removeRow(selectedRow);
+                }
+            }
+        });
+        jpanel.add(removeButton);
+        
+        addButton = new JButton("+");
+        addButton.setBounds(625, 482, 67, 27);
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    DefaultTableModel model = (DefaultTableModel) table.getModel();
+                    Integer quantityInteger = (Integer) model.getValueAt(selectedRow, 2);
+                    quantityString = quantityInteger.toString();
+                    if (quantityString != null && !quantityString.isEmpty() && !quantityString.equals("null")) {
+                        quantity = Integer.parseInt(quantityString);
+                        model.setValueAt(quantity + 1, selectedRow, 2); // Increase quantity by 1
+                    }
+                }
+            }
+        });
+        jpanel.add(addButton);
 
+        subtractButton = new JButton("-");
+        subtractButton.setBounds(794, 482, 67, 27);
+        subtractButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow != -1) {
+                    DefaultTableModel model = (DefaultTableModel) table.getModel();
+                    Integer quantityInteger = (Integer) model.getValueAt(selectedRow, 2);
+                    quantityString = quantityInteger.toString();
+                    if (quantityString != null && !quantityString.isEmpty()) {
+                        quantity = Integer.parseInt(quantityString);
+                        if (quantity > 1) {
+                            model.setValueAt(quantity - 1, selectedRow, 2); // Decrease quantity by 1
+                        }
+                    }
+                }
+            }
+        });
+        jpanel.add(subtractButton);
 
+        // Get cart products from the database
+        database db = new database("cart.txt");
+        ArrayList<product> products = db.getCart();
 
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Product name                     ||                   Product Price             ||                Product Quantity"},
-				{null},
-				{null},
-				{null},
-				{null},
-				{null},
-				{null},
-				{null},
-				{null},
-				{null},
-			},
-			new String[] {
-				"New column"
-			}
-		));
-		table.setSurrendersFocusOnKeystroke(true);
-		table.setRowMargin(4);
-		table.setOpaque(false);
-		table.setIntercellSpacing(new Dimension(2, 2));
-		table.setInheritsPopupMenu(true);
-		table.setIgnoreRepaint(true);
-		table.setEditingRow(5);
-		table.setEditingColumn(4);
-		table.setColumnSelectionAllowed(true);
-		table.setCellSelectionEnabled(true);
-		table.setBorder(null);
-		table.setAutoCreateRowSorter(true);
-		table.setBounds(100, 116, 800, 400);
-		jpanel.add(table);
-		jlabel2.setBounds(426, 527, 153, 40);
-		jpanel.add(jlabel2);
+        table = new JTable();
+        table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        DefaultTableModel model = new DefaultTableModel(
+                new Object[][]{{"Product Name", "Product Price", "Product Quantity"}},
+                new String[]{"Product Name", "Product Price", "Product Quantity"}
+        ) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        table.setModel(model);
 
-		jlabelback=new JLabel("");
-		jlabelback.setIcon(new ImageIcon(""));
-		jlabelback.setBounds(42,41,59,60);
-		jlabelback.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				new Menu();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jpanel.add(jlabelback);
-		
-		jlabelsignout=new JLabel("");
-		jlabelsignout.setIcon(new ImageIcon(""));
-		jlabelsignout.setBounds(802,51,158,40);
-		jlabelsignout.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				jframe.dispose();
-				database db = new database("loggedIn.txt");
-		        db.clear();
-				new LogIn();
-			}
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-		});
-		jpanel.add(jlabelsignout);
-		
-		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(128, 539, 111, 28);
-		jpanel.add(lblNewLabel);
-		
-		
-		jlabel=new JLabel();
-		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res\\Cart.png"));
-		jpanel.add(jlabel);
-		jframe.setBounds(0,0,1016,637);
-		jframe.setLocationRelativeTo(null);
-		jframe.setVisible(true);
-		
-		
-		
-		
-	}
+        for (product p : products) {
+            model.addRow(new Object[]{p.productName, p.productPrice, 1}); // Set initial quantity to 1
+        }
+
+        table.setBounds(100, 140, 800, 340);
+        jpanel.add(table);
+
+        jlabelback = new JLabel("");
+        jlabelback.setIcon(new ImageIcon(""));
+        jlabelback.setBounds(42, 41, 59, 60);
+        jlabelback.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+        jframe.dispose();
+        new Menu();
+        }
+        });
+        jpanel.add(jlabelback);
+        jlabelsignout = new JLabel("");
+        jlabelsignout.setIcon(new ImageIcon(""));
+        jlabelsignout.setBounds(802, 51, 158, 40);
+        jlabelsignout.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                jframe.dispose();
+                database db = new database("loggedIn.txt");
+                db.clear();
+                new LogIn();
+            }
+        });
+        jpanel.add(jlabelsignout);
+
+        JLabel totalLabel = new JLabel("");
+        totalLabel.setText("Total:");
+        totalLabel.setBounds(133, 540, 111, 14);
+        jpanel.add(totalLabel);
+
+        jlabel = new JLabel();
+        jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        jlabel.setSize(1000, 600);
+        jlabel.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\src\\res\\Cart.png"));
+        jpanel.add(jlabel);
+        jframe.setBounds(0, 0, 1016, 637);
+        jframe.setLocationRelativeTo(null);
+        jframe.setVisible(true);
+    }
+
+    
+     
+    
 }
-	
-	

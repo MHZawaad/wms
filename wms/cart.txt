@@ -1,0 +1,9 @@
+Id=0004,Name=Ispahani Mirzapore Tea,Price=210,Quantity=null,MFD=10.5.2023,EXP=2 years
+Id=0010,Name=Unilever Lifeboy Soap,Price=35,Quantity=null,MFD=11.5.2023,EXP=2 years
+Id=0003,Name=Pran Frooto Juice,Price=25,Quantity=null,MFD=14.5.2023,EXP=6 months
+Id=0005,Name=Nestle Nido Milk Powder,Price=1080,Quantity=null,MFD=1.5.2023,EXP=1 year
+Id=0007,Name=Pepsi Soft Drink,Price=40,Quantity=null,MFD=9.5.2023,EXP=6 months
+Id=0005,Name=Nestle Nido Milk Powder,Price=1080,Quantity=0,MFD=1.5.2023,EXP=1 year
+Id=0004,Name=Ispahani Mirzapore Tea,Price=210,Quantity=0,MFD=10.5.2023,EXP=2 years
+Id=0002,Name=Fresh Salt,Price=60,Quantity=null,MFD=10.5.2023,EXP=1 year
+Id=0008,Name=Square Toiletries Soap,Price=30,Quantity=null,MFD=8.5.2023,EXP=2 years
