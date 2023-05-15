@@ -9,9 +9,10 @@ public class Shopping extends JFrame {
 	
 	private JLabel jlabelsearch,jlabelcart,jlabelback,jlabelsignout;
 	private JTextField jtextfield;
-	private JLabel jlabelimage;
+	private JLabel jlabelimage,addtocart;
 	private JPanel panel;
 	private List<Rectangle> labelBounds;
+	private String selected;
     public Shopping() {
     	
 		setTitle("Shopping");
@@ -53,6 +54,7 @@ public class Shopping extends JFrame {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     System.out.println(label.getText() + " clicked!");
+                    selected="";//productid or product name that was selected
                 }
             });
 
@@ -64,8 +66,34 @@ public class Shopping extends JFrame {
                 y += 171;
             }
         }
+        
+        addtocart = new JLabel("");
+		addtocart.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				//adds product to cart
+				System.out.println("product added to cart:\n"+selected+","+selected);//fuad step1: select a product step 2 : click on add to cart button step3: cart.txt product is added with quantity 1
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+		});
+		addtocart.setBounds(751, 530, 165, 34);
+		panel.add(addtocart);
+		
 
-        add(panel, BorderLayout.CENTER);
+        getContentPane().add(panel, BorderLayout.CENTER);
         jlabelsearch = new JLabel("\r\n");
 		jlabelsearch.addMouseListener(new MouseAdapter() {
 			@Override
