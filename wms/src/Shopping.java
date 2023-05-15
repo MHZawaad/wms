@@ -31,7 +31,7 @@ public class Shopping extends JFrame {
             Rectangle bounds = new Rectangle(x, y, 140, 160);
             labelBounds.add(bounds);
 
-            JLabel label = new JLabel("Product " + (i + 1));
+            JLabel label = new JLabel("Product " + (i + 1));//fuad ekhane tui 10 ta product er nam boshabi from database
             label.setBounds(bounds);
 
             label.addMouseListener(new MouseAdapter() {
