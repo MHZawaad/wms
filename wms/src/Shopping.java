@@ -13,6 +13,9 @@ public class Shopping extends JFrame {
 	private JPanel panel;
 	private List<Rectangle> labelBounds;
 	private String selected;
+	private product selectedProduct;
+
+	private ArrayList<product> addedProducts = new ArrayList<>();
     public Shopping() {
     	
 		setTitle("Shopping");
@@ -50,11 +53,15 @@ public class Shopping extends JFrame {
             JLabel label = new JLabel(products.get(i).productName);//fuad ekhane tui 10 ta product er nam boshabi from database
             label.setBounds(bounds);
 
+			int finalI = i;
+
             label.addMouseListener(new MouseAdapter() {
                 @Override
                 public void mouseClicked(MouseEvent e) {
                     System.out.println(label.getText() + " clicked!");
-                    selected="";//productid or product name that was selected
+                    //selected="";//productid or product name that was selected
+					//selected = products.get(i).productName + " | " + products.get(i).productPrice + " " + products.get(i).productQuantity;
+					selectedProduct = products.get(finalI);
                 }
             });
 
@@ -73,8 +80,9 @@ public class Shopping extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				
 				//adds product to cart
-				System.out.println("product added to cart:\n"+selected+","+selected);//fuad step1: select a product step 2 : click on add to cart button step3: cart.txt product is added with quantity 1
-				
+				System.out.println("product added to cart:\n"+ selectedProduct.productName);//fuad step1: select a product step 2 : click on add to cart button step3: cart.txt product is added with quantity 1
+				//addedProducts.add(new product(selected, 1));
+				addedProducts.add(selectedProduct);
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
