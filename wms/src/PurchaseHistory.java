@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.*;//class not needed
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.EtchedBorder;

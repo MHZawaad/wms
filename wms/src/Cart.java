@@ -29,8 +29,10 @@ public class Cart {
         jlabel2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+               
+                JOptionPane.showMessageDialog(null, "You have purchased products!");
                 jframe.dispose();
-                new PurchaseHistory();
+                new Menu();
             }
         });
         jlabel2.setBounds(426, 527, 153, 40);
