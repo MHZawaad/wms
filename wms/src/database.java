@@ -112,15 +112,19 @@ public class database {
         ArrayList<product> products = new ArrayList<product>();
         for (String line : this.data) {
             String[] parts = line.split(",");
-            String[] idParts = parts[0].split("=");
-            String[] nameParts = parts[1].split("=");
-            String[] priceParts = parts[3].split("=");
-            String[] manufactureDate = parts[5].split("=");
-            String[] expiryDate = parts[6].split("=");
+            String id = parts[0];
+            String name = parts[1];
+            String price = parts[3];
+            String manufactureDate = parts[5];
+            String expiryDate = parts[6];
 
-            product prod = new product(idParts[1], nameParts[1], priceParts[1], manufactureDate[1], expiryDate[1]);
+            //System.out.println("Product name: " + nameParts[1]);
+
+            product prod = new product(id.split("=")[1], name.split("=")[1], price.split("=")[1], manufactureDate.split("=")[1], expiryDate.split("=")[1]);
             products.add(prod);
         }
+
+        System.out.println("Size: " + products.size());
 
         return products;
     }
