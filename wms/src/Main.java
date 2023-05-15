@@ -19,7 +19,7 @@ public class Main{
         USERNAME = checkpoint.get();
             
         if (USERNAME.equals("")){
-            new defaultPage();
+            new FrontPage();
         }else{
             
             database db = new database("users.txt");

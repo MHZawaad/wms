@@ -10,6 +10,8 @@ public class Shopping extends JFrame {
 	private JLabel jlabelsearch,jlabelcart,jlabelback,jlabelsignout;
 	private JTextField jtextfield;
 	private JLabel jlabelimage;
+	private JPanel panel;
+	private List<Rectangle> labelBounds;
     public Shopping() {
     	
 		setTitle("Shopping");
@@ -18,23 +20,16 @@ public class Shopping extends JFrame {
         setResizable(false);
         setExtendedState(JFrame.MAXIMIZED_HORIZ);
 
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(null); // Set panel layout to null for manual positioning
 
-        List<Rectangle> labelBounds = new ArrayList<>();
-        labelBounds.add(new Rectangle(266, 166, 140, 160));
-        labelBounds.add(new Rectangle(100, 166, 140, 160));
-        labelBounds.add(new Rectangle(431, 166, 140, 160));
-        labelBounds.add(new Rectangle(594, 166, 140, 160));
-        labelBounds.add(new Rectangle(760, 166, 140, 160));
-        labelBounds.add(new Rectangle(760, 337, 140, 160));
-        labelBounds.add(new Rectangle(594, 337, 140, 160));
-        labelBounds.add(new Rectangle(431, 337, 140, 160));
-        labelBounds.add(new Rectangle(266, 337, 140, 160));
-        labelBounds.add(new Rectangle(100, 337, 140, 160));
+        labelBounds = new ArrayList<>();
+        int x = 100;
+        int y = 166;
 
-        for (int i = 0; i < labelBounds.size(); i++) {
-            Rectangle bounds = labelBounds.get(i);
+        for (int i = 0; i < 10; i++) {
+            Rectangle bounds = new Rectangle(x, y, 140, 160);
+            labelBounds.add(bounds);
 
             JLabel label = new JLabel("Product " + (i + 1));
             label.setBounds(bounds);
@@ -47,17 +42,21 @@ public class Shopping extends JFrame {
             });
 
             panel.add(label);
-        
 
+            x += 166;
+            if (i == 4) {
+                x = 100;
+                y += 171;
+            }
         }
-        
+
+        add(panel, BorderLayout.CENTER);
         jlabelsearch = new JLabel("\r\n");
 		jlabelsearch.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				//searches for product
 			
-				//get text from e
 				String queryString = jtextfield.getText();
 
 				System.out.println(queryString);
@@ -84,12 +83,6 @@ public class Shopping extends JFrame {
 		});
 		jlabelsearch.setBounds(636, 107, 41, 43);
 		panel.add(jlabelsearch);
-		
-		
-
-
-		
-		
 		
 		
 		jlabelcart = new JLabel("\r\n");
