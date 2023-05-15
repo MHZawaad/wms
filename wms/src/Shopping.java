@@ -9,7 +9,7 @@ public class Shopping extends JFrame {
 	
 	private JLabel jlabelsearch,jlabelcart,jlabelback,jlabelsignout;
 	private JTextField jtextfield;
-	private JLabel jlabelimage;
+	private JLabel jlabelimage,addtocart;
 	private JPanel panel;
 	private List<Rectangle> labelBounds;
     public Shopping() {
@@ -48,8 +48,33 @@ public class Shopping extends JFrame {
                 y += 171;
             }
         }
+        
+        addtocart = new JLabel("");
+		addtocart.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				//adds product to cart
+				System.out.println("product added");
+			}
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+		});
+		addtocart.setBounds(751, 530, 165, 34);
+		panel.add(addtocart);
+		
 
-        add(panel, BorderLayout.CENTER);
+        getContentPane().add(panel, BorderLayout.CENTER);
         jlabelsearch = new JLabel("\r\n");
 		jlabelsearch.addMouseListener(new MouseAdapter() {
 			@Override
