@@ -53,7 +53,7 @@ public class defaultPage extends JFrame implements MouseListener{
         signupButton.addMouseListener(this);
         mainPanel.add(signupButton);
 
-        image = new JLabel(new ImageIcon("res/FrontPage.png"), JLabel.CENTER);
+        image = new JLabel(new ImageIcon("res\\FrontPage.png"), JLabel.CENTER);
         image.setVerticalAlignment(JLabel.BOTTOM);
         image.setBounds(0, 0, 1000, 600);
 

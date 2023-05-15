@@ -10,6 +10,7 @@ public class Shopping extends JFrame {
 	private JLabel jlabelsearch,jlabelcart,jlabelback,jlabelsignout;
 	private JTextField jtextfield;
 	private JLabel jlabelimage;
+	private ArrayList<String> allProducts;
     public Shopping() {
     	
 		setTitle("Shopping");
@@ -33,10 +34,16 @@ public class Shopping extends JFrame {
         labelBounds.add(new Rectangle(266, 337, 140, 160));
         labelBounds.add(new Rectangle(100, 337, 140, 160));
 
+		database prodDatabase = new database("products.txt");
+
+		ArrayList<product> allProducts = prodDatabase.getAllProducts();
+
+
         for (int i = 0; i < labelBounds.size(); i++) {
+
             Rectangle bounds = labelBounds.get(i);
 
-            JLabel label = new JLabel("Product " + (i + 1));
+            JLabel label = new JLabel(allProducts.get(i).productName);
             label.setBounds(bounds);
 
             label.addMouseListener(new MouseAdapter() {
@@ -84,11 +91,6 @@ public class Shopping extends JFrame {
 		});
 		jlabelsearch.setBounds(636, 107, 41, 43);
 		panel.add(jlabelsearch);
-		
-		
-
-
-		
 		
 		
 		
@@ -176,7 +178,7 @@ public class Shopping extends JFrame {
         jlabelimage=new JLabel();
 		jlabelimage.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabelimage.setSize(1000, 600);
-		jlabelimage.setIcon(new ImageIcon("E:\\Git\\wms\\wms\\Resources\\Shopping1.png"));
+		jlabelimage.setIcon(new ImageIcon("res\\Shopping1.png"));
 		panel.add(jlabelimage);
 		this.setBounds(0,0,1016,637);
 		this.setLocationRelativeTo(null);

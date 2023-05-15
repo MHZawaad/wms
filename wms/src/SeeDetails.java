@@ -61,7 +61,7 @@ public class SeeDetails {
 		jlabel=new JLabel();
 		jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		jlabel.setSize(1000, 600);
-		jlabel.setIcon(new ImageIcon("res/See Details.png"));
+		jlabel.setIcon(new ImageIcon("res\\See Details.png"));
 		jpanel.add(jlabel);
 		jframe.setBounds(0,0,1016,637);
 		//jframe.setLocationRelativeTo(null);
