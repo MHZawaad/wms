@@ -1,4 +1,4 @@
-jhahahsfhskfj import javax.swing.*;/////////////////////////////////////////////class not needed 
+import javax.swing.*;/////////////////////////////////////////////class not needed 
 import java.awt.*;
 import java.awt.event.*;
 public class SeeDetails {

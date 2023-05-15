@@ -272,7 +272,7 @@ public class database {
         write();
     }
 
-    public ArrayList<String> getProducts(String productName) {
+    public ArrayList<product> getProducts(String productName) {
         read();
 
         productName = productName.toLowerCase();
@@ -283,14 +283,25 @@ public class database {
         this.data.toArray(lines);
 
         // search the 1st index for the product name
-        ArrayList<String> products = new ArrayList<String>();
+        ArrayList<product> products = new ArrayList<product>();
+
         for (int i = 0; i < lines.length; i++) {
             String[] lineParts = lines[i].split(",");
             String[] productNameParts = lineParts[1].split("=");
 
             if (productNameParts[1].toLowerCase().contains(productName)) {
                 System.out.println("Found " + productNameParts[1] + " in database");
-                products.add(lines[i]);
+                
+                String id = lineParts[0];
+                String name = lineParts[1];
+                String price = lineParts[3];
+                String manufactureDate = lineParts[5];
+                String expiryDate = lineParts[6];
+    
+                //System.out.println("Product name: " + nameParts[1]);
+    
+                product prod = new product(id.split("=")[1], name.split("=")[1], price.split("=")[1], manufactureDate.split("=")[1], expiryDate.split("=")[1]);
+                products.add(prod);
             }
         }
 

@@ -107,8 +107,14 @@ public class Shopping extends JFrame {
 				//search for product
 				database producDatabase = new database("products.txt");
 
-				for (String item : producDatabase.getProducts(queryString)){
-					System.out.println(item);
+				for (product item : producDatabase.getProducts(queryString)){
+					System.out.println("-------------------------------------------");
+					System.out.println("ID: " + item.productID);
+					System.out.println("Name: " + item.productName);
+					System.out.println("Price: " + item.productPrice);
+					System.out.println("MFD: " + item.manufacturingDate);
+					System.out.println("EXP: " + item.expiryDate);
+					System.out.println("-------------------------------------------");
 				}
 			}
 			@Override
