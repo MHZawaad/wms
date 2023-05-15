@@ -15,6 +15,15 @@ public class product{
         this.expiryDate = expiryDate;
     }
 
+    public product(String productID, String productName, String productPrice, String productQuantity, String manufacturingDate, String expiryDate){
+        this.productID = productID;
+        this.productName = productName;
+        this.productPrice = productPrice;
+        this.productQuantity = productQuantity;
+        this.manufacturingDate = manufacturingDate;
+        this.expiryDate = expiryDate;
+    }
+
     public product(String productID, String productName, String productPrice, String productQuantity, String productManufacturer, String manufacturingDate, String expiryDate){
         this.productID = productID;
         this.productName = productName;

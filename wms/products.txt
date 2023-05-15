@@ -7,7 +7,7 @@ productId=0006,productName=Pran Miniket Rice,productCategory=Rice,productPrice=6
 productId=0007,productName=Pepsi Soft Drink,productCategory=Soft Drink,productPrice=40,manufacturer=PepsiCo,manufactureDate=9.5.2023,expireDate=6 months
 productId=0008,productName=Square Toiletries Soap,productCategory=Soap,productPrice=30,manufacturer=Square Toiletries Ltd.,manufactureDate=8.5.2023,expireDate=2 years
 productId=0009,productName=Kazi Farmas Honey,productCategory=Honey,productPrice=340,manufacturer=Kazi Farms Group,manufactureDate=6.5.2023,expireDate=1 year
-productId=0010,productName=Unilever Lifebuoy Soap,productCategory=Soap,productPrice=35,manufacturer=Unilever Bangladesh Ltd.,manufactureDate=11.5.2023,expireDate=2 years
+productId=0010,productName=Unilever Lifeboy Soap,productCategory=Soap,productPrice=35,manufacturer=Unilever Bangladesh Ltd.,manufactureDate=11.5.2023,expireDate=2 years
 productId=0011,productName=Danish Condensed Milk,productCategory=Condensed Milk,productPrice=85,manufacturer=Danish Dairy Limited,manufactureDate=13.5.2023,expireDate=1 year
 productId=0012,productName=Radhuni Garam Masala,productCategory=Spice,productPrice=60,manufacturer=Square Consumer Products Limited,manufactureDate=7.5.2023,expireDate=2 years
 productId=0013,productName=Pran Tomato Ketchup,productCategory=Ketchup,productPrice=75,manufacturer=Pran Group,manufactureDate=15.5.2023,expireDate=1 year

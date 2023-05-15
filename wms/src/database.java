@@ -129,6 +129,28 @@ public class database {
         return products;
     }
 
+    public ArrayList<product> getCart(){
+        read();
+        ArrayList<product> products = new ArrayList<product>();
+
+        for (String line : this.data) {
+            String[] parts = line.split(",");
+            String id = parts[0];
+            String name = parts[1];
+            String price = parts[2];
+            String quantity = parts[3];
+            String manufactureDate = parts[4];
+            String expiryDate = parts[5];
+
+            //System.out.println("Product name: " + nameParts[1]);
+
+            product prod = new product(id.split("=")[1], name.split("=")[1], price.split("=")[1], quantity.split("=")[1], manufactureDate.split("=")[1], expiryDate.split("=")[1]);
+            products.add(prod);
+        }
+
+        return products;
+    }
+
     public boolean contains(String line) {
         read();
         return this.data.contains(line);
