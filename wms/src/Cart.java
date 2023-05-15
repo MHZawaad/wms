@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import javax.swing.table.DefaultTableModel;
 public class Cart {
 	
@@ -58,6 +61,18 @@ public class Cart {
 		btnNewButton.setBounds(699, 527, 41, 27);
 		jpanel.add(btnNewButton);
 		
+
+		//get cart products from cdatabase
+		database db = new database("cart.txt");
+		
+		ArrayList<product> products = db.getCart();
+
+		for ( int i = 0; i < products.size(); i++){
+			System.out.println(products.get(i).productName);
+		}
+
+
+
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {

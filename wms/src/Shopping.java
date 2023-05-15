@@ -3,6 +3,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Shopping extends JFrame {
@@ -15,7 +16,8 @@ public class Shopping extends JFrame {
 	private String selected;
 	private product selectedProduct;
 
-	private ArrayList<product> addedProducts = new ArrayList<>();
+	private HashMap<product, Boolean> cart = new HashMap<>();
+	
     public Shopping() {
     	
 		setTitle("Shopping");
@@ -79,10 +81,23 @@ public class Shopping extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				
+				if (selectedProduct == null){
+					System.out.println("no product selected");
+					JOptionPane.showMessageDialog(null, "Please select a product");
+					return;
+				}
+
+				if (cart.get(selectedProduct) != null){
+					System.out.println("product already in cart");
+
+					JOptionPane.showMessageDialog(null, "Product is already in cart");
+					return;
+				}
+
 				//adds product to cart
 				System.out.println("product added to cart:\n"+ selectedProduct.productName);//fuad step1: select a product step 2 : click on add to cart button step3: cart.txt product is added with quantity 1
 				//addedProducts.add(new product(selected, 1));
-				addedProducts.add(selectedProduct);
+				cart.put(selectedProduct, true);
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
@@ -146,6 +161,14 @@ public class Shopping extends JFrame {
 		jlabelcart.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+
+				database cartDatabase = new database("cart.txt");
+
+				//add products to cart
+				for (product item : cart.keySet()){
+					cartDatabase.add("Id=" + item.productID + ",Name=" + item.productName + ",Price=" + item.productPrice + ",Quantity=" + item.productQuantity + ",MFD=" + item.manufacturingDate + ",EXP=" + item.expiryDate);
+				}
+
 				dispose();
 				new Cart();
 			}
@@ -232,7 +255,5 @@ public class Shopping extends JFrame {
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
     }
-
-    
 }
 
