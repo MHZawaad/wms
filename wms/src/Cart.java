@@ -12,9 +12,14 @@ public class Cart {
     protected JTable table;
     private int quantity;
     private JButton addButton,subtractButton;
+    private ArrayList<product> cartItems;
+    private database db;
     String quantityString;
     public Cart() {
-
+    	
+    	cartItems = new ArrayList<product>();
+        db = new database("cart.txt");
+ 
         jframe = new JFrame();
         jframe.setTitle("Cart");
         jframe.setSize(new Dimension(1016, 638));
@@ -29,10 +34,11 @@ public class Cart {
         jlabel2.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-               
+            	updateCart();
                 JOptionPane.showMessageDialog(null, "You have purchased products!");
                 jframe.dispose();
                 new Menu();
+                
             }
         });
         jlabel2.setBounds(426, 527, 153, 40);
@@ -112,6 +118,7 @@ public class Cart {
         for (product p : products) {
             model.addRow(new Object[]{p.productName, p.productPrice, 1}); // Set initial quantity to 1
         }
+      
 
         table.setBounds(100, 140, 800, 340);
         jpanel.add(table);
@@ -145,6 +152,13 @@ public class Cart {
         totalLabel.setText("Total:");
         totalLabel.setBounds(133, 540, 111, 14);
         jpanel.add(totalLabel);
+        
+        jframe.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                updateCart();
+            }
+        });
 
         jlabel = new JLabel();
         jlabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -154,6 +168,21 @@ public class Cart {
         jframe.setBounds(0, 0, 1016, 637);
         jframe.setLocationRelativeTo(null);
         jframe.setVisible(true);
+    }
+ 
+    public void updateCart() {
+        db.read();
+        cartItems.clear();
+        DefaultTableModel model = (DefaultTableModel) table.getModel();
+        int rowCount = model.getRowCount();
+        for (int i = 0; i < rowCount; i++) {
+            String productName = (String) model.getValueAt(i, 0);
+            String productPrice = (String) model.getValueAt(i, 1);
+            //int quantity = (int) model.getValueAt(i, 2);
+            product p = new product(productName,productName,"1",productName,productName);
+            cartItems.add(p);
+        }
+        db.updateCart(cartItems);
     }
 
     

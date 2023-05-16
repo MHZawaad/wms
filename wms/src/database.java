@@ -97,6 +97,7 @@ public class database {
         }
     }
 
+   
     public ArrayList<String> getProdsName() {
         read();
         ArrayList<String> temp = new ArrayList<String>();
@@ -129,6 +130,16 @@ public class database {
         return products;
     }
 
+    public void updateCart(ArrayList<product> cartItems) {
+        this.data.clear();
+        for (product item : cartItems) {
+            String line = "id=" + item.productID + ",name=" + item.productName + ",price=" + item.productPrice +
+                    ",quantity=" + item.productQuantity + ",manufacturingDate=" + item.manufacturingDate +
+                    ",expiryDate=" + item.expiryDate;
+            this.data.add(line);
+        }
+        write();
+    }
     public ArrayList<product> getCart(){
         read();
         ArrayList<product> products = new ArrayList<product>();
