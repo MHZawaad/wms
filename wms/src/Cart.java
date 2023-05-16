@@ -129,6 +129,7 @@ public class Cart {
         jlabelback.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
+        updateCart();
         jframe.dispose();
         new Menu();
         }
@@ -140,6 +141,7 @@ public class Cart {
         jlabelsignout.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+            	updateCart();
                 jframe.dispose();
                 database db = new database("loggedIn.txt");
                 db.clear();
@@ -179,7 +181,7 @@ public class Cart {
             String productName = (String) model.getValueAt(i, 0);
             String productPrice = (String) model.getValueAt(i, 1);
             //int quantity = (int) model.getValueAt(i, 2);
-            product p = new product(productName,productName,"1",productName,productName);
+            product p = new product(productName,productName,productPrice,"1",productName);
             cartItems.add(p);
         }
         db.updateCart(cartItems);

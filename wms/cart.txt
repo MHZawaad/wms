@@ -1,4 +1,3 @@
-id=Product Name,name=Product Name,price=1,quantity=null,manufacturingDate=Product Name,expiryDate=Product Name
-id=Product Name,name=Product Name,price=1,quantity=null,manufacturingDate=Product Name,expiryDate=Product Name
-id=Fresh Salt,name=Fresh Salt,price=1,quantity=null,manufacturingDate=Fresh Salt,expiryDate=Fresh Salt
-id=Pran Frooto Juice,name=Pran Frooto Juice,price=1,quantity=null,manufacturingDate=Pran Frooto Juice,expiryDate=Pran Frooto Juice
+id=Product Name,name=Product Name,price=Product Price,quantity=null,manufacturingDate=1,expiryDate=Product Name
+id=Product Name,name=Product Name,price=Product Price,quantity=null,manufacturingDate=1,expiryDate=Product Name
+id=Ispahani Mirzapore Tea,name=Ispahani Mirzapore Tea,price=210,quantity=null,manufacturingDate=1,expiryDate=Ispahani Mirzapore Tea
